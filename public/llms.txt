@@ -1,0 +1,19 @@
+# Starter Template
+
+> Opinionated Next.js starter template with quality gates wired in: tests, coverage, lint, format, typecheck, build, smoke, e2e, CI, Docker, docs.
+
+## Pages
+
+- [Home](/)
+- [Help center](/help)
+- [Contact](/contact)
+- [Report feedback](/feedback)
+- [API docs (Swagger UI)](/docs)
+
+## APIs
+
+- [OpenAPI document](/api/openapi.json)
+- [Health check](/health)
+- [Contact challenge](/api/challenge)
+- [Contact submission](/api/contact)
+- [Feedback submission](/api/feedback)

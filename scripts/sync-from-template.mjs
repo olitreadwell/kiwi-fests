@@ -139,6 +139,12 @@ async function main() {
       }
       const merged = structuredClone(localPkg);
       merged.scripts = { ...tmplPkg.scripts, ...(localPkg.scripts ?? {}) };
+      // Don't force the husky prepare hook onto repos without a husky
+      // dependency (older apps and monorepos manage hooks differently).
+      const hasHuskyDep = localPkg.dependencies?.husky ?? localPkg.devDependencies?.husky;
+      if (!hasHuskyDep) {
+        delete merged.scripts.prepare;
+      }
       // Runtime deps stay local: template app deps (Radix, nodemailer, …)
       // are opt-in per repo, not forced by a sync.
       merged.dependencies = localPkg.dependencies ?? {};
