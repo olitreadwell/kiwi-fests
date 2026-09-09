@@ -1,4 +1,4 @@
-import { FestivalStatus, Region } from '@/generated/prisma';
+import { FestivalStatus, Region } from '@/lib/festival-types';
 
 // ---------------------------------------------------------------------------
 // Region labels
@@ -25,6 +25,7 @@ export const REGION_LABELS: Record<Region, string> = {
   ONLINE: 'Online',
 };
 
+/** Human label for a region key, e.g. "Northland". */
 export function formatRegion(r: Region | null | undefined): string {
   if (!r) return 'Unknown region';
   return REGION_LABELS[r] ?? r;
@@ -50,6 +51,7 @@ export const STATUS_BADGE_CLASS: Record<FestivalStatus, string> = {
   UNCONFIRMED: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
 };
 
+/** Human label and badge classes for a festival status. */
 export function formatStatus(s: FestivalStatus): {
   label: string;
   className: string;
@@ -61,6 +63,7 @@ export function formatStatus(s: FestivalStatus): {
 // Date range formatting — "28 Dec 2026" or "28–30 Dec 2026"
 // ---------------------------------------------------------------------------
 
+/** Human date range, e.g. "28 Dec 2026" or "28-30 Dec 2026". */
 export function formatDateRange(start: Date | null, end: Date | null): string | null {
   if (!start) return null;
   const full = (d: Date) =>
@@ -82,6 +85,7 @@ export function formatDateRange(start: Date | null, end: Date | null): string | 
 // Slug generation — matches the formula used in prisma/seed.ts
 // ---------------------------------------------------------------------------
 
+/** Slugify a name the same way the seed data does. */
 export function slugify(name: string): string {
   return name
     .toLowerCase()

@@ -10,12 +10,7 @@
   "packageRules": [
     {
       "description": "React core must bump in lockstep",
-      "matchPackageNames": [
-        "react",
-        "react-dom",
-        "@types/react",
-        "@types/react-dom"
-      ],
+      "matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"],
       "groupName": "react"
     },
     {
@@ -30,12 +25,7 @@
     },
     {
       "description": "Test tooling",
-      "matchPackageNames": [
-        "@testing-library/**",
-        "vitest",
-        "@vitest/coverage-v8",
-        "jsdom"
-      ],
+      "matchPackageNames": ["@testing-library/**", "vitest", "@vitest/coverage-v8", "jsdom"],
       "groupName": "testing"
     },
     {

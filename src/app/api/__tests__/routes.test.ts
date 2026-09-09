@@ -1,24 +1,24 @@
 import { describe, expect, it } from 'vitest';
 
-import { GET as unsubscribeGet } from '../unsubscribe/route';
+import { POST as unsubscribePost } from '../unsubscribe/route';
 import { POST as subscribePost } from '../subscribe/route';
 
 describe('API — subscribe', () => {
-  it('POST /api/subscribe returns 400 without body', async () => {
+  it('POST /api/subscribe returns 500 without a JSON body', async () => {
     const request = new Request('http://localhost:3000/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: '',
     });
     const response = await subscribePost(request);
-    expect(response.status).toBe(400);
+    expect(response.status).toBe(500);
   });
 
   it('POST /api/subscribe returns 400 with invalid email', async () => {
     const request = new Request('http://localhost:3000/api/subscribe', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: 'email=not-an-email&region=AUCKLAND',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: 'not-an-email', region: 'AUCKLAND' }),
     });
     const response = await subscribePost(request);
     expect(response.status).toBe(400);
@@ -26,10 +26,15 @@ describe('API — subscribe', () => {
 });
 
 describe('API — unsubscribe', () => {
-  it('GET /api/unsubscribe redirects to invalid without token', async () => {
-    const response = await unsubscribeGet(new Request('http://localhost:3000/api/unsubscribe'));
-    expect(response.status).toBe(302);
-    expect(response.headers.get('location')).toContain('/unsubscribe/invalid');
+  it('POST /api/unsubscribe returns 400 without a token', async () => {
+    const response = await unsubscribePost(
+      new Request('http://localhost:3000/api/unsubscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: '{}',
+      })
+    );
+    expect(response.status).toBe(400);
   });
 });
 

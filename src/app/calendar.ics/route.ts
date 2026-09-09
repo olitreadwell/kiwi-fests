@@ -1,65 +1,62 @@
-import { prisma } from '@/lib/prisma';
-import { FestivalStatus } from '@/generated/prisma';
+import { buildExportFromSource } from '@/lib/db';
+import { getSiteConfig } from '@/lib/site-config';
 
-function escapeICS(text: string): string {
-  return text.replace(/[\\;,]/g, '\\$&').replace(/\n/g, '\\n');
+export const dynamic = 'force-dynamic';
+
+/**
+ * Escape one iCal text value: backslash, semicolon and comma per RFC 5545.
+ *
+ * @param text - Raw text
+ * @returns Escaped text
+ */
+function escapeIcs(text: string): string {
+  return text.replace(/([\\;,])/g, '\\$1').replace(/\n/g, '\\n');
 }
 
-function formatICSDate(date: Date): string {
-  return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+/**
+ * Format a YYYY-MM-DD date as an all-day iCal DATE value.
+ *
+ * @param date - ISO date
+ * @returns DATE value, e.g. 20260905
+ */
+function toIcsDate(date: string): string {
+  return date.replace(/-/g, '');
 }
 
-export async function GET() {
-  const festivals = await prisma.festival.findMany({
-    where: {
-      approved: true,
-      status: { in: [FestivalStatus.ACTIVE, FestivalStatus.TBC] },
-      startDate: { gte: new Date() },
-    },
-    orderBy: { startDate: 'asc' },
-    select: {
-      name: true,
-      slug: true,
-      startDate: true,
-      endDate: true,
-      location: true,
-      notes: true,
-      website: true,
-    },
-  });
-
-  const events = festivals
-    .filter((f) => f.startDate)
-    .map((f) => {
-      const end = f.endDate ?? new Date(f.startDate!.getTime() + 86400000);
-      return [
+/**
+ * GET /calendar.ics — all-day VEVENTs for every listing with calendar
+ * dates, for calendar apps and add-to-calendar links.
+ */
+export async function GET(): Promise<Response> {
+  const config = getSiteConfig();
+  const dataset = await buildExportFromSource();
+  const events = dataset.items.flatMap((item) =>
+    item.calendarDates.map((d) =>
+      [
         'BEGIN:VEVENT',
-        `UID:${f.slug}@aotearoa-festivals`,
-        `DTSTART:${formatICSDate(f.startDate!)}`,
-        `DTEND:${formatICSDate(end)}`,
-        `SUMMARY:${escapeICS(f.name)}`,
-        ...(f.location ? [`LOCATION:${escapeICS(f.location)}`] : []),
-        ...(f.notes ? [`DESCRIPTION:${escapeICS(f.notes)}`] : []),
-        ...(f.website ? [`URL:${f.website}`] : []),
+        `UID:${item.id}@${config.name.toLowerCase().replace(/\s+/g, '-')}`,
+        `DTSTART;VALUE=DATE:${toIcsDate(d.start)}`,
+        ...(d.end ? [`DTEND;VALUE=DATE:${toIcsDate(d.end)}`] : []),
+        `SUMMARY:${escapeIcs(d.label ? `${item.name} — ${d.label}` : item.name)}`,
+        ...(item.location ? [`LOCATION:${escapeIcs(`${item.location}, ${item.city}`)}`] : []),
+        ...(item.website ? [`URL:${item.website}`] : []),
         'END:VEVENT',
-      ].join('\r\n');
-    });
-
+      ].join('\r\n')
+    )
+  );
   const ics = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Aotearoa Festivals//calendar.ics//EN',
-    'X-WR-CALNAME:Aotearoa Festivals — Upcoming',
-    'NAME:Aotearoa Festivals — Upcoming',
+    'PRODID:-//OpenItemsDirectory//calendar.ics//EN',
+    `X-WR-CALNAME:${config.name} — dates`,
     'REFRESH-INTERVAL;VALUE=DURATION:P1D',
     ...events,
     'END:VCALENDAR',
   ].join('\r\n');
-
   return new Response(ics, {
     headers: {
-      'Content-Type': 'text/calendar; charset=utf-8',
-      'Content-Disposition': 'inline; filename="aotearoa-festivals.ics"',
+      'content-type': 'text/calendar; charset=utf-8',
+      'content-disposition': 'inline; filename="calendar.ics"',
     },
   });
 }

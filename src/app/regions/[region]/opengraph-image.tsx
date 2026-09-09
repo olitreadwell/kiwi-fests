@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
-import { prisma } from '@/lib/prisma';
+import { listRegionFestivals } from '@/lib/festival-data';
 import { formatRegion } from '@/lib/format';
-import type { Region } from '@/generated/prisma';
+import type { Region } from '@/lib/festival-types';
 
 export const size = {
   width: 1200,
@@ -15,9 +15,7 @@ export default async function Image({ params }: { params: Promise<{ region: stri
   const { region } = await params;
 
   const regionEnum = region.toUpperCase() as Region;
-  const count = await prisma.festival.count({
-    where: { region: regionEnum, approved: true },
-  });
+  const count = listRegionFestivals(regionEnum).length;
 
   const label = formatRegion(regionEnum);
   const subtitle = count > 0 ? `${count} festival${count !== 1 ? 's' : ''}` : '';

@@ -1,13 +1,3 @@
 {
-  "github": {
-    "autoJobCancelation": true
-  },
-  "git": {
-    "deploymentEnabled": {
-      "main": true,
-      "development": true,
-      "dev": true,
-      "**": false
-    }
-  }
+  "crons": [{ "path": "/api/cron/refresh", "schedule": "0 14 * * *" }]
 }

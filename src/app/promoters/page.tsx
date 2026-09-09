@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma';
+import { listPromoters } from '@/lib/festival-data';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Pagination from '@/components/Pagination';
@@ -22,15 +22,15 @@ export default async function PromotersPage({
   const requestedPage = Math.max(1, Math.floor(Number(page)) || 1);
   const sortField = sort === 'region' || sort === 'genre' ? sort : 'name';
 
-  const [totalCount, promoters] = await Promise.all([
-    prisma.promoter.count(),
-    prisma.promoter.findMany({
-      orderBy: { [sortField]: 'asc' },
-      skip: (requestedPage - 1) * PAGE_SIZE,
-      take: PAGE_SIZE,
-      include: { _count: { select: { festivals: true } } },
-    }),
-  ]);
+  const all = listPromoters();
+  const totalCount = all.length;
+  const promoters = all
+    .sort((a, b) =>
+      (a[sortField as 'name' | 'region' | 'genre'] ?? '').localeCompare(
+        b[sortField as 'name' | 'region' | 'genre'] ?? ''
+      )
+    )
+    .slice((requestedPage - 1) * PAGE_SIZE, requestedPage * PAGE_SIZE);
 
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
   const currentPage = Math.min(requestedPage, totalPages);
@@ -94,7 +94,7 @@ export default async function PromotersPage({
                   className="border-b border-border transition-colors hover:bg-muted/50 dark:border-border dark:hover:bg-muted/50"
                 >
                   <td className="py-2.5 pr-4">
-                    <Link href={`/promoters/${p.slug}`} className="font-medium hover:underline">
+                    <Link href={`/promoters/${p.id}`} className="font-medium hover:underline">
                       {p.name}
                     </Link>
                   </td>
@@ -102,9 +102,9 @@ export default async function PromotersPage({
                     {p.region || '—'}
                   </td>
                   <td className="py-2.5 pr-4 text-muted-foreground dark:text-muted-foreground">
-                    {p.genreFocus || '—'}
+                    {p.genre || '—'}
                   </td>
-                  <td className="py-2.5 pr-4">{p._count.festivals}</td>
+                  <td className="py-2.5 pr-4">{p.festivalCount ?? 0}</td>
                   <td className="py-2.5">
                     <div className="flex gap-2">
                       {p.website && (

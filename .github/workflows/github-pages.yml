@@ -1,0 +1,44 @@
+name: github-pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+# Alternative deploy path: static export from the committed snapshot.
+# API / feed / cron routes are serverless-only (Vercel), so the export
+# serves the site shell + dataset pages from src/data/snapshot.json.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build:snapshot
+      - run: NEXT_OUTPUT_MODE=export NEXT_PUBLIC_SITE_URL=${{ vars.NEXT_PUBLIC_SITE_URL }} pnpm build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

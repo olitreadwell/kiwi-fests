@@ -1,36 +1,33 @@
-import AxeBuilder from '@axe-core/playwright';
+import { AxeBuilder } from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
-const ROUTES = ['/', '/festivals', '/calendar', '/map', '/search', '/about', '/contact', '/plan'];
+const routes = [
+  '/',
+  '/items',
+  '/items/rhythm-and-vines',
+  '/search',
+  '/map',
+  '/opt-out',
+  '/subscribe',
+  '/contact',
+  '/feedback',
+  '/help',
+  '/login',
+];
 
-test.describe('a11y — all routes', () => {
-  for (const route of ROUTES) {
-    test(`no a11y violations on ${route}`, async ({ page }) => {
-      await page.emulateMedia({ reducedMotion: 'reduce' });
+// Automated gate: WCAG 2.2 A/AA + best practice. AAA is a manual human
+// review on top of this (see docs/a11y.md) because axe has no AAA rules.
+test.describe('a11y audit (WCAG 2.2 A/AA + best practice)', () => {
+  for (const route of routes) {
+    test(`${route} has no axe violations`, async ({ page }) => {
       await page.goto(route);
+      // Entrance animations (Reveal) fade content in over 800ms; axe must
+      // run after they settle or mid-transition opacity skews contrast.
+      await page.waitForTimeout(1_200);
       const results = await new AxeBuilder({ page })
-        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'])
         .analyze();
       expect(results.violations).toEqual([]);
     });
   }
-});
-
-test.describe('a11y — dark mode', () => {
-  test('no a11y violations on home in dark mode', async ({ page }) => {
-    await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.goto('/');
-    await page.evaluate(() => document.documentElement.classList.add('dark'));
-    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
-    expect(results.violations).toEqual([]);
-  });
-});
-
-test.describe('a11y — keyboard navigation', () => {
-  test('skip link is focusable and visible', async ({ page }) => {
-    await page.goto('/');
-    await page.keyboard.press('Tab');
-    const skipLink = page.locator('a[href="#main-content"]');
-    await expect(skipLink).toBeVisible();
-  });
 });

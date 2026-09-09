@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { FestivalStatus } from '@/generated/prisma';
-import { prisma } from '@/lib/prisma';
+import { listAllFestivals } from '@/lib/festival-data';
+import { FestivalStatus } from '@/lib/festival-types';
 import type { PlanFestival } from '@/lib/plan-optimizer';
 import PlanPageClient from './_components/PlanPageClient';
 
@@ -19,50 +19,31 @@ export type PlanFestivalWithStatus = PlanFestival & {
 
 export default async function PlanPage() {
   const now = new Date();
-  const festivals = await prisma.festival.findMany({
-    where: {
-      approved: true,
-      OR: [{ startDate: { gte: now } }, { startDate: null, status: FestivalStatus.ACTIVE }],
-    },
-    select: {
-      slug: true,
-      name: true,
-      region: true,
-      genre: true,
-      camping: true,
-      ticketPrice: true,
-      attendance: true,
-      startDate: true,
-      endDate: true,
-      dateText: true,
-      status: true,
-      lineups: {
-        select: { artist: { select: { genre: true } } },
-      },
-    },
-    orderBy: [{ startDate: { sort: 'asc', nulls: 'last' } }, { name: 'asc' }],
-  });
+  const festivals = listAllFestivals().filter(
+    (f) => f.startDate === null || f.startDate >= now || f.status === FestivalStatus.ACTIVE
+  );
 
-  const planFestivals: PlanFestivalWithStatus[] = festivals.map((f) => ({
-    slug: f.slug,
-    name: f.name,
-    region: f.region,
-    genre: f.genre,
-    camping: f.camping,
-    ticketPrice: f.ticketPrice,
-    attendance: f.attendance,
-    lineupGenres: [
-      ...new Set(
-        f.lineups
-          .map((l) => l.artist.genre)
-          .filter((g): g is string => typeof g === 'string' && g.length > 0)
-      ),
-    ],
-    startDate: f.startDate,
-    endDate: f.endDate,
-    dateText: f.dateText,
-    status: f.status,
-  }));
+  const planFestivals: PlanFestivalWithStatus[] = festivals
+    .sort((a, b) => {
+      if (a.startDate && b.startDate) return a.startDate.getTime() - b.startDate.getTime();
+      if (a.startDate) return -1;
+      if (b.startDate) return 1;
+      return a.name.localeCompare(b.name);
+    })
+    .map((f) => ({
+      slug: f.slug,
+      name: f.name,
+      region: f.region,
+      genre: f.genre,
+      camping: f.camping,
+      ticketPrice: f.ticketPrice,
+      attendance: f.attendance,
+      lineupGenres: [],
+      startDate: f.startDate,
+      endDate: f.endDate,
+      dateText: f.dateText,
+      status: f.status,
+    }));
 
   return <PlanPageClient festivals={planFestivals} />;
 }

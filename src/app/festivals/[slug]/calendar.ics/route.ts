@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma';
+import { getFestivalBySlug } from '@/lib/festival-data';
 import { formatRegion } from '@/lib/format';
 
 function escapeIcsText(value: string): string {
@@ -30,18 +30,7 @@ function addDays(date: Date, days: number): Date {
 export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
-  const festival = await prisma.festival.findUnique({
-    where: { slug },
-    select: {
-      name: true,
-      slug: true,
-      location: true,
-      region: true,
-      website: true,
-      startDate: true,
-      endDate: true,
-    },
-  });
+  const festival = getFestivalBySlug(slug);
 
   if (!festival || !festival.startDate) {
     return new Response('Not found', { status: 404 });

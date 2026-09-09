@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og';
-import { prisma } from '@/lib/prisma';
+import { getArtistBySlug } from '@/lib/festival-data';
 
 export const size = {
   width: 1200,
@@ -12,10 +12,7 @@ export const alt = 'Artist card';
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
-  const artist = await prisma.artist.findUnique({
-    where: { slug },
-    select: { name: true, genre: true, homeCity: true },
-  });
+  const artist = getArtistBySlug(slug);
 
   const name = artist?.name ?? 'Aotearoa Festivals';
   const subtitle = artist ? [artist.homeCity, artist.genre].filter(Boolean).join(' · ') : '';

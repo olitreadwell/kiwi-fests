@@ -38,14 +38,6 @@ const THEME_INIT_SCRIPT = `
 })();
 `;
 
-const SW_REGISTER = `
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker.register("/sw.js");
-  });
-}
-`;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -100,7 +92,6 @@ export default function RootLayout({
             </nav>
           </div>
         </footer>
-        <script dangerouslySetInnerHTML={{ __html: SW_REGISTER }} />
       </body>
     </html>
   );

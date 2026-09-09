@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "contact": {
+    "email": "set CONTACT_TO env var (e.g. <app>-contact@ot.mozmail.com)",
+    "endpoint": "/api/contact"
+  },
+  "feedback": {
+    "endpoint": "/api/feedback",
+    "labels": ["bug", "enhancement", "question"],
+    "enabled": "when GH_TOKEN and GH_REPO env vars are set"
+  },
+  "proofOfWork": {
+    "challengeEndpoint": "/api/challenge",
+    "algorithm": "SHA-256",
+    "requirement": "submit a nonce whose sha256(noncePrefix + nonce) hex digest starts with the requested number of zero digits",
+    "difficulty": 4
+  },
+  "agentInstructions": "See docs/contact.md in the repository for the full contract and how agents should file issues."
+}

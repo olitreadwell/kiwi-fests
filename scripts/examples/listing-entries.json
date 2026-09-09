@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Example Source Listing One",
+    "city": "Wellington",
+    "region": "Wellington region",
+    "location": "Aro Valley",
+    "website": "https://example.com",
+    "categories": "example,thrift",
+    "description": "Discovered by the example scraper from the committed sample file."
+  },
+  {
+    "name": "Example Source Listing Two",
+    "city": "Porirua",
+    "region": "Wellington region",
+    "location": "Titahi Bay",
+    "website": "https://example.com",
+    "categories": "example",
+    "description": "Second entry proving multi-city discovery works offline."
+  }
+]

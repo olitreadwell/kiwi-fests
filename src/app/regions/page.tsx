@@ -1,8 +1,8 @@
 export const dynamic = 'force-dynamic';
 
 import type { Metadata } from 'next';
-import { prisma } from '@/lib/prisma';
-import { Region } from '@/generated/prisma';
+import { listRegions } from '@/lib/festival-data';
+import { Region } from '@/lib/festival-types';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -45,19 +45,10 @@ function regionToSlug(region: Region): string {
 // ---------------------------------------------------------------------------
 
 export default async function RegionsPage() {
-  const groups = await prisma.festival.groupBy({
-    by: ['region'],
-    where: { approved: true },
-    _count: { id: true },
-  });
-
-  // Filter out null regions, sort by count descending
-  const rows = groups
-    .filter((g) => g.region !== null)
-    .sort((a, b) => b._count.id - a._count.id) as Array<{
-    region: Region;
-    _count: { id: number };
-  }>;
+  const rows = listRegions().map(({ region, count }) => ({
+    region,
+    _count: { id: count },
+  }));
 
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-4 py-8">

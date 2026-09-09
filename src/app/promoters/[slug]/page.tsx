@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma';
+import { getPromoterBySlug, listPromoters } from '@/lib/festival-data';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -8,18 +8,7 @@ import { FestivalStatusBadge } from '@/components/FestivalStatusBadge';
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  try {
-    const promoters = await prisma.promoter.findMany({
-      select: { slug: true },
-    });
-    return promoters.map((promoter) => ({ slug: promoter.slug }));
-  } catch (error) {
-    console.warn(
-      'generateStaticParams: could not reach the database, falling back to on-demand rendering for /promoters/[slug]',
-      error
-    );
-    return [];
-  }
+  return listPromoters().map((promoter) => ({ slug: promoter.id }));
 }
 
 type Props = {
@@ -28,7 +17,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const promoter = await prisma.promoter.findUnique({ where: { slug } });
+  const promoter = getPromoterBySlug(slug);
   if (!promoter) return { title: 'Promoter not found — Aotearoa Festivals' };
   return {
     title: `${promoter.name} — Aotearoa Festivals`,
@@ -41,14 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PromoterDetailPage({ params }: Props) {
   const { slug } = await params;
 
-  const promoter = await prisma.promoter.findUnique({
-    where: { slug },
-    include: {
-      festivals: {
-        orderBy: [{ startDate: 'desc' }, { name: 'asc' }],
-      },
-    },
-  });
+  const promoter = getPromoterBySlug(slug);
 
   if (!promoter) notFound();
 
@@ -69,7 +51,7 @@ export default async function PromoterDetailPage({ params }: Props) {
 
       <h1 className="text-3xl font-semibold tracking-tight">{promoter.name}</h1>
 
-      {(promoter.region ?? promoter.genreFocus) && (
+      {(promoter.region ?? promoter.genre) && (
         <dl className="mt-4 space-y-1.5 text-sm">
           {promoter.region && (
             <div className="flex gap-2">
@@ -81,14 +63,12 @@ export default async function PromoterDetailPage({ params }: Props) {
               </dd>
             </div>
           )}
-          {promoter.genreFocus && (
+          {promoter.genre && (
             <div className="flex gap-2">
               <dt className="w-16 shrink-0 font-medium text-foreground dark:text-foreground">
                 Genre
               </dt>
-              <dd className="text-muted-foreground dark:text-muted-foreground">
-                {promoter.genreFocus}
-              </dd>
+              <dd className="text-muted-foreground dark:text-muted-foreground">{promoter.genre}</dd>
             </div>
           )}
         </dl>

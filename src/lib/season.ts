@@ -38,6 +38,7 @@ function seasonLabel(key: SeasonKey, year: number): string {
   return `${key.charAt(0) + key.slice(1).toLowerCase()} ${year}`;
 }
 
+/** The NZ festival season a date falls in. */
 export function getSeasonForDate(date: Date): Season {
   const year = date.getUTCFullYear();
   // Jan/Feb belong to the Summer that started the previous December.
@@ -73,6 +74,7 @@ export interface SeasonGroup<T> {
   festivals: T[];
 }
 
+/** Group festivals into their NZ seasons, in calendar order. */
 export function groupFestivalsBySeason<T extends { startDate: Date | null }>(
   festivals: T[]
 ): SeasonGroup<T>[] {

@@ -1,23 +1,18 @@
-import { prisma } from '@/lib/prisma';
-import { Region } from '@/generated/prisma';
+import { NextResponse } from 'next/server';
+import { toErrorResponse } from '@/lib/errors';
+import { handleSubscribe, isEmailSubscribeEnabled } from '@/lib/subscription';
 
-export async function POST(request: Request) {
-  const data = await request.formData();
-  const email = (data.get('email') as string | null)?.trim().toLowerCase();
-  const regionRaw = data.get('region') as string | null;
+export const dynamic = 'force-dynamic';
 
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return Response.json({ error: 'Invalid email' }, { status: 400 });
+/**
+ * POST /api/subscribe — optional email list signup, env-gated off by
+ * default (EMAIL_SUBSCRIBE_ENABLED=true). Validates and records.
+ */
+export async function POST(request: Request): Promise<Response> {
+  try {
+    const { message } = await handleSubscribe(await request.json());
+    return NextResponse.json({ ok: true, disabled: !isEmailSubscribeEnabled(), message });
+  } catch (err) {
+    return toErrorResponse(err);
   }
-  if (!regionRaw || !Object.values(Region).includes(regionRaw as Region)) {
-    return Response.json({ error: 'Invalid region' }, { status: 400 });
-  }
-
-  await prisma.emailSubscription.upsert({
-    where: { email_region: { email, region: regionRaw as Region } },
-    update: {},
-    create: { email, region: regionRaw as Region },
-  });
-
-  return Response.redirect(new URL('/subscribe/confirmed', request.url));
 }

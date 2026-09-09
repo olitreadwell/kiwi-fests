@@ -209,9 +209,10 @@ export default function SeasonPlanner({ festivals }: { festivals: PlanFestivalWi
               />
             </label>
 
-            <label>
+            <label htmlFor="plan-camping">
               <FilterLabel>Camping</FilterLabel>
               <Select
+                id="plan-camping"
                 value={camping}
                 onChange={(e) => setCamping(e.target.value as 'any' | 'yes' | 'no')}
               >

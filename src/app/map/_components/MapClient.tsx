@@ -3,7 +3,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import type { Region } from '@/generated/prisma';
+import type { Region } from '@/lib/festival-types';
 import { formatRegion } from '@/lib/format';
 
 const MapContainer = dynamic(() => import('react-leaflet').then((m) => m.MapContainer), {
@@ -140,7 +140,7 @@ export default function MapPage({ festivals }: { festivals: FestivalMarker[] }) 
           scrollWheelZoom={true}
         >
           <TileLayer
-            attribution='&copy; <a href="https://carto.com/">CARTO</a>'
+            attribution='&copy; <a href="https://carto.com/" target="_blank" rel="noopener noreferrer">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           />
           {filtered.map((f) => (

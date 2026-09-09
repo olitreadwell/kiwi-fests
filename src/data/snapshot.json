@@ -1,0 +1,2090 @@
+{
+  "version": "seed",
+  "exportedAt": "2026-09-09T04:20:30.356Z",
+  "license": "Public data only. Opt-out respected — see /opt-out.",
+  "items": [
+    {
+      "id": "bay-of-islands-jazz-and-blues-festival",
+      "name": "Bay of Islands Jazz & Blues Festival",
+      "slug": "bay-of-islands-jazz-and-blues-festival",
+      "city": "Bay of Islands",
+      "region": "Northland",
+      "location": "Bay of Islands",
+      "lat": -35.28,
+      "lng": 174.09,
+      "website": "https://boimusicfestivals.com/",
+      "categories": ["festival", "Jazz / Blues"],
+      "description": "Regional jazz and blues festival · All ages, 3-day",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://boimusicfestivals.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-08-07",
+          "end": "2026-08-09",
+          "label": "7–9 Aug 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Jazz / Blues",
+        "camping": false,
+        "ticketPrice": "$25–$60 per session",
+        "ticketUrl": "https://boimusicfestivals.com/",
+        "vibe": "Relaxed seaside jazz picnic"
+      }
+    },
+    {
+      "id": "rhythm-and-vines",
+      "name": "Rhythm and Vines",
+      "slug": "rhythm-and-vines",
+      "city": "Gisborne",
+      "region": "Gisborne",
+      "location": "Gisborne",
+      "lat": -38.66,
+      "lng": 178.02,
+      "website": "https://www.rhythmandvines.co.nz/",
+      "categories": ["festival", "NYE / Multi-genre"],
+      "description": "One of NZ's biggest NYE festivals, running since 2003 · 18+, 3-day | https://www.facebook.com/RhythmandVines · https://www.instagram.com/rhythmandvines",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.rhythmandvines.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-28",
+          "end": "2027-01-01",
+          "label": "28 Dec 2026 – 1 Jan 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "NYE / Multi-genre",
+        "camping": true,
+        "attendance": 25000,
+        "ticketPrice": "$250–$450 (multi-day)",
+        "ticketUrl": "https://www.rhythmandvines.co.nz/",
+        "vibe": "Iconic NYE in the vines — multi-genre party under the Gisborne sun"
+      }
+    },
+    {
+      "id": "rhythm-and-alps",
+      "name": "Rhythm and Alps",
+      "slug": "rhythm-and-alps",
+      "city": "Cardrona Valley, Wānaka",
+      "region": "Otago",
+      "location": "Cardrona Valley, Wānaka",
+      "lat": -44.88,
+      "lng": 169.01,
+      "website": "https://rhythmandalps.co.nz/",
+      "categories": ["festival", "NYE / Electronic, hip-hop, alt"],
+      "description": "At Robrosa Station · 18+, 2-day | https://www.facebook.com/Rhythmandalps/ · https://www.instagram.com/rhythmandalps/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://rhythmandalps.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-30",
+          "end": "2026-12-31",
+          "label": "30–31 Dec 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "NYE / Electronic, hip-hop, alt",
+        "camping": false,
+        "attendance": 15000
+      }
+    },
+    {
+      "id": "northern-bass",
+      "name": "Northern Bass",
+      "slug": "northern-bass",
+      "city": "Kaiwaka / Mangawhai",
+      "region": "Northland",
+      "location": "Kaiwaka / Mangawhai",
+      "lat": -36.15,
+      "lng": 174.43,
+      "website": "https://northernbass.co.nz/",
+      "categories": ["festival", "NYE / DnB, dubstep, house, techno"],
+      "description": "15th anniversary edition. Run by @fuzennz · 18+, 3-day | found via site footer (icon link, handle not text-labelled)",
+      "source": {
+        "label": "Fuzen NZ",
+        "url": "https://northernbass.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-30",
+          "end": "2026-12-31",
+          "label": "30–31 Dec 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "NYE / DnB, dubstep, house, techno",
+        "camping": true,
+        "attendance": 10000,
+        "promoter": "Fuzen NZ"
+      }
+    },
+    {
+      "id": "rolling-meadows",
+      "name": "Rolling Meadows",
+      "slug": "rolling-meadows",
+      "city": "240 Lower Styx Road, Bottle Lake, Christchurch",
+      "region": "Canterbury",
+      "location": "240 Lower Styx Road, Bottle Lake, Christchurch",
+      "lat": -43.49,
+      "lng": 172.72,
+      "website": "https://rollingmeadows.co.nz/",
+      "categories": ["festival", "Multi-genre (DnB, dance, pop, hip hop)"],
+      "description": "6th year in Christchurch. 3 stages (Meadows, SUB180, Canopy). 2026 lineup incl. Alison Wonderland, Andy C, Clean Bandit, Example, Friction, JME. | https://www.facebook.com/Rollingmeadowsnz · https://www.instagram.com/rollingmeadowsnz/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://rollingmeadows.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-29",
+          "end": "2026-12-31",
+          "label": "29–31 Dec 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Multi-genre (DnB, dance, pop, hip hop)",
+        "camping": false,
+        "attendance": 3000
+      }
+    },
+    {
+      "id": "marton-country-music-festival",
+      "name": "Marton Country Music Festival",
+      "slug": "marton-country-music-festival",
+      "city": "Marton",
+      "region": "Manawatū-Whanganui",
+      "location": "Marton",
+      "website": "https://www.martonfestival.nz/",
+      "categories": ["festival", "Country"],
+      "description": "'Marton Country Music Festival' Facebook page, ~750 followers",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.martonfestival.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-01-15",
+          "end": "2027-01-17",
+          "label": "15–17 Jan 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Country",
+        "attendance": 4000
+      }
+    },
+    {
+      "id": "new-zealand-fringe-festival",
+      "name": "New Zealand Fringe Festival",
+      "slug": "new-zealand-fringe-festival",
+      "city": "Wellington, various venues",
+      "region": "Wellington",
+      "location": "Wellington, various venues",
+      "website": "https://www.fringe.co.nz/",
+      "categories": ["festival", "Arts, open-access"],
+      "description": "NZ's largest open-access arts festival. | https://www.facebook.com/NZFringe · https://www.instagram.com/nzfringe",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.fringe.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-03-01",
+          "end": "2027-03-28",
+          "label": "12 Feb – 6 Mar 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Arts, open-access"
+      }
+    },
+    {
+      "id": "womad-aotearoa",
+      "name": "WOMAD Aotearoa",
+      "slug": "womad-aotearoa",
+      "city": "Bowl of Brooklands, New Plymouth",
+      "region": "Taranaki",
+      "location": "Bowl of Brooklands, New Plymouth",
+      "website": "https://www.womad.co.nz/",
+      "categories": ["festival", "World music"],
+      "description": "https://www.facebook.com/womadnz/ · https://www.instagram.com/womadnz/?hl=en",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.womad.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-03-12",
+          "end": "2027-03-14",
+          "label": "12–14 Mar 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "World music",
+        "attendance": 20000
+      }
+    },
+    {
+      "id": "cubadupa",
+      "name": "CubaDupa",
+      "slug": "cubadupa",
+      "city": "Cuba Street, Wellington",
+      "region": "Wellington",
+      "location": "Cuba Street, Wellington",
+      "website": "https://www.cubadupa.co.nz/",
+      "categories": ["festival", "Free street festival"],
+      "description": "https://www.facebook.com/cubadupa · https://instagram.com/cubadupa",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.cubadupa.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-03-20",
+          "end": "2027-03-21",
+          "label": "20–21 Mar 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Free street festival",
+        "cost": "Free",
+        "attendance": 50000
+      }
+    },
+    {
+      "id": "jim-beam-homegrown",
+      "name": "Jim Beam Homegrown",
+      "slug": "jim-beam-homegrown",
+      "city": "Claudelands Oval, Hamilton",
+      "region": "Waikato",
+      "location": "Claudelands Oval, Hamilton",
+      "website": "https://www.homegrown.net.nz/",
+      "categories": ["festival", "Multi-genre (dub/roots, reggae, EDM, rock, pop, hip hop)"],
+      "description": "Moved from Wellington to Hamilton for 2027. | https://www.facebook.com/HomegrownOfficial · https://www.instagram.com/jimbeamhomegrown/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.homegrown.net.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-04-03",
+          "label": "3 Apr 2027 (moved from Wellington to Hamilton)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Multi-genre (dub/roots, reggae, EDM, rock, pop, hip hop)",
+        "attendance": 30000
+      }
+    },
+    {
+      "id": "high-tide-festival",
+      "name": "High Tide Festival",
+      "slug": "high-tide-festival",
+      "city": "Waitangi Park, Wellington",
+      "region": "Wellington",
+      "location": "Waitangi Park, Wellington",
+      "website": "https://hightidefestival.co.nz/",
+      "categories": ["festival", "Multi-genre"],
+      "description": "Presented by Audiology Touring.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://hightidefestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-11-07",
+          "label": "7 Nov 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Multi-genre"
+      }
+    },
+    {
+      "id": "wellington-jazz-festival",
+      "name": "Wellington Jazz Festival",
+      "slug": "wellington-jazz-festival",
+      "city": "Wellington, various venues",
+      "region": "Wellington",
+      "location": "Wellington, various venues",
+      "website": "https://www.jazzfestival.nz/",
+      "categories": ["festival", "Jazz"],
+      "description": "https://www.facebook.com/welljazzfest/ · https://www.instagram.com/welljazzfest/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.jazzfestival.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-10-14",
+          "end": "2026-10-18",
+          "label": "14–18 Oct 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Jazz",
+        "attendance": 20000
+      }
+    },
+    {
+      "id": "twisted-frequency",
+      "name": "Twisted Frequency",
+      "slug": "twisted-frequency",
+      "city": "Cobb Valley, Upper Takaka",
+      "region": "Tasman",
+      "location": "Cobb Valley, Upper Takaka",
+      "lat": -41.12,
+      "lng": 172.68,
+      "website": "https://www.twistedfrequency.co.nz/",
+      "categories": ["festival", "NYE / Multi-genre, 4 stages"],
+      "description": "18+, 5-day | Twisted Frequency Festival (Upper Takaka) - ~23.1K followers · https://www.instagram.com/twistedfrequencyfestival (~15.7K followers)",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.twistedfrequency.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-30",
+          "end": "2027-01-03",
+          "label": "30 Dec 2026 – 3 Jan 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "NYE / Multi-genre, 4 stages",
+        "camping": true,
+        "attendance": 1500
+      }
+    },
+    {
+      "id": "kiwiburn",
+      "name": "Kiwiburn",
+      "slug": "kiwiburn",
+      "city": "Hunterville",
+      "region": "Manawatū-Whanganui",
+      "location": "Hunterville",
+      "website": "https://kiwiburn.com/",
+      "categories": ["festival", "Burning Man regional event"],
+      "description": "2027 theme: Moss and Microchips. | https://www.facebook.com/Kiwiburn · https://instagram.com/kiwiburn/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://kiwiburn.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-02-01",
+          "end": "2027-02-28",
+          "label": "27 Jan – 1 Feb 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Burning Man regional event",
+        "camping": true,
+        "attendance": 4000
+      }
+    },
+    {
+      "id": "shipwrecked",
+      "name": "Shipwrecked",
+      "slug": "shipwrecked",
+      "city": "Te Arai",
+      "region": "Auckland",
+      "location": "Te Arai",
+      "website": "https://shipwrecked.co.nz/",
+      "categories": ["festival", "Music, arts, wellness"],
+      "description": "'Shipwrecked Festival NZ' (@shipwreckednz), ~12.2K followers · 'Shipwrecked Festival NZ' (@shipwreckednz), ~13.8K followers",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://shipwrecked.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-02-12",
+          "end": "2027-02-14",
+          "label": "12–14 Feb 2027 (2026 10th-anniversary edition ran 6-8 Feb)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Music, arts, wellness"
+      }
+    },
+    {
+      "id": "newtown-festival",
+      "name": "Newtown Festival",
+      "slug": "newtown-festival",
+      "city": "Newtown, Wellington",
+      "region": "Wellington",
+      "location": "Newtown, Wellington",
+      "lat": -41.32,
+      "lng": 174.77,
+      "website": "https://www.newtownfestival.org.nz/",
+      "categories": ["festival", "Free community street festival"],
+      "description": "http://www.facebook.com/pages/Newtown-Festival/46143023618",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.newtownfestival.org.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-03-07",
+          "label": "7 Mar 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Free community street festival",
+        "cost": "Free",
+        "attendance": 40000
+      }
+    },
+    {
+      "id": "twominds-festival",
+      "name": "Twominds Festival",
+      "slug": "twominds-festival",
+      "city": "Spencer Beach Top 10 Holiday Park, 100 Heyders Road, Christchurch",
+      "region": "Canterbury",
+      "location": "Spencer Beach Top 10 Holiday Park, 100 Heyders Road, Christchurch",
+      "lat": -43.47,
+      "lng": 172.72,
+      "website": "https://www.twomindsfestival.co.nz/",
+      "categories": ["festival", "Drum & Bass, House"],
+      "description": "2024 (2nd edition): Chaos In The CBD, SHERELLE, Eden Burns + 40+ local artists. 2025 (3rd edition): 66 artists across 5 hand-built stages. 18+. On-site camping with full facilities. Campervan passes.",
+      "source": {
+        "label": "Twominds",
+        "url": "https://www.twomindsfestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2025-03-14",
+          "label": "Last ran 14 Mar 2025 (3rd edition)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Drum & Bass, House",
+        "cost": "$150 - $270",
+        "camping": true,
+        "ticketPrice": "$150–$270",
+        "vibe": "Boutique DnB and house weekender among the pines",
+        "promoter": "Twominds"
+      }
+    },
+    {
+      "id": "great-sounds-great",
+      "name": "Great Sounds Great",
+      "slug": "great-sounds-great",
+      "city": "Cuba Street precinct, Wellington (10 venues)",
+      "region": "Wellington",
+      "location": "Cuba Street precinct, Wellington (10 venues)",
+      "website": "https://www.eyegum.co.nz/great-sounds-great",
+      "categories": ["festival", "Multi-genre, 40 artists"],
+      "description": "Lineup incl. Bic Runga, Savage, Mokotron, Silicon. | https://www.facebook.com/eyegumevents/ · https://www.instagram.com/eyegum/",
+      "source": {
+        "label": "Eyegum Music Collective",
+        "url": "https://www.eyegum.co.nz/great-sounds-great"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-09-05",
+          "label": "5 Sep 2026 (+ 'The Night Before' warm-up party 4 Sep in Newtown)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Multi-genre, 40 artists",
+        "cost": "$119",
+        "attendance": 3000,
+        "promoter": "Eyegum Music Collective"
+      }
+    },
+    {
+      "id": "carlucci-carnival",
+      "name": "Carlucci Carnival",
+      "slug": "carlucci-carnival",
+      "city": "Carlucci Land, Wellington",
+      "region": "Wellington",
+      "location": "Carlucci Land, Wellington",
+      "categories": ["festival", "Electronic, multi-stage"],
+      "description": "Went in 2025.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://aotearoa-festivals.vercel.app"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-10-24",
+          "end": "2026-10-25",
+          "label": "24–25 Oct 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Electronic, multi-stage"
+      }
+    },
+    {
+      "id": "soundsplash",
+      "name": "Soundsplash",
+      "slug": "soundsplash",
+      "city": "Wainui Reserve, Raglan",
+      "region": "Waikato",
+      "location": "Wainui Reserve, Raglan",
+      "lat": -37.79,
+      "lng": 175.28,
+      "website": "https://soundsplash.co.nz/",
+      "categories": ["festival", "Boutique, multi-genre"],
+      "description": "All-ages. | https://www.facebook.com/soundsplashnz (handle @soundsplashnz, ~32.9K followers) · https://www.instagram.com/soundsplashnz/ (~34.4K followers)",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://soundsplash.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-01-22",
+          "end": "2027-01-24",
+          "label": "22–24 Jan 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Boutique, multi-genre",
+        "camping": true,
+        "attendance": 8000
+      }
+    },
+    {
+      "id": "electric-avenue-music-festival",
+      "name": "Electric Avenue Music Festival",
+      "slug": "electric-avenue-music-festival",
+      "city": "Hagley Park, Christchurch",
+      "region": "Canterbury",
+      "location": "Hagley Park, Christchurch",
+      "lat": -43.53,
+      "lng": 172.62,
+      "website": "https://electricavenuefestival.co.nz/",
+      "categories": ["festival", "Multi-genre"],
+      "description": "18+, 2-day | https://www.facebook.com/electricavenuemusicfestival/ · https://www.instagram.com/electricavenuefestival/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://electricavenuefestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-02-26",
+          "end": "2027-02-27",
+          "label": "26–27 Feb 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Multi-genre",
+        "camping": false,
+        "attendance": 20000
+      }
+    },
+    {
+      "id": "aum-festival",
+      "name": "AUM Festival",
+      "slug": "aum-festival",
+      "city": "Leighton's Farm, South Head",
+      "region": "Auckland",
+      "location": "Leighton's Farm, South Head",
+      "website": "https://www.aum.co.nz/",
+      "categories": [
+        "festival",
+        "NYE / Underground electronic (house, techno, psytrance, DnB, bass)"
+      ],
+      "description": "4 stages, 200+ artists. | https://www.facebook.com/AUMFestivalNZ · https://www.instagram.com/aum.new.years.eve/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.aum.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-30",
+          "end": "2027-01-02",
+          "label": "30 Dec 2026 – 2 Jan 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "NYE / Underground electronic (house, techno, psytrance, DnB, bass)",
+        "camping": true,
+        "attendance": 3000
+      }
+    },
+    {
+      "id": "camp-a-low-hum",
+      "name": "Camp A Low Hum",
+      "slug": "camp-a-low-hum",
+      "city": "Camp Wainui, Wainuiomata",
+      "region": "Wellington",
+      "location": "Camp Wainui, Wainuiomata",
+      "website": "https://www.alowhum.com/",
+      "categories": ["festival", "Underground / DIY, lineup never revealed in advance"],
+      "description": "Only goes ahead if 75%+ tickets sold by a set date. | https://www.facebook.com/groups/campalh/ · https://www.instagram.com/alowhum/",
+      "source": {
+        "label": "A Low Hum",
+        "url": "https://www.alowhum.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-02-01",
+          "end": "2027-02-28",
+          "label": "Mid–late Feb 2027 (exact TBC)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Underground / DIY, lineup never revealed in advance",
+        "camping": true,
+        "promoter": "A Low Hum"
+      }
+    },
+    {
+      "id": "tora-bombora",
+      "name": "Tora Bombora",
+      "slug": "tora-bombora",
+      "city": "Tora coastline",
+      "region": "Wairarapa",
+      "location": "Tora coastline",
+      "website": "https://www.torabombora.co.nz/",
+      "categories": ["festival", "Boutique, community-led"],
+      "description": "Returning after a 4-year hiatus. Capacity expanded to 2000. Tickets on sale 10 Aug 2026. | https://www.facebook.com/ToraBomboraFestival/ · https://www.instagram.com/torabombora/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.torabombora.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-01-22",
+          "end": "2027-01-24",
+          "label": "22–24 Jan 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Boutique, community-led"
+      }
+    },
+    {
+      "id": "southern-sounds",
+      "name": "Southern Sounds",
+      "slug": "southern-sounds",
+      "city": "Logan Park, Dunedin",
+      "region": "Otago",
+      "location": "Logan Park, Dunedin",
+      "website": "https://www.audiologytouring.com/festival/southern-sounds",
+      "categories": ["festival", "Electronic"],
+      "description": "",
+      "source": {
+        "label": "Audiology Touring",
+        "url": "https://www.audiologytouring.com/festival/southern-sounds"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-09-19",
+          "label": "19 Sep 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Electronic",
+        "attendance": 3000,
+        "promoter": "Audiology Touring"
+      }
+    },
+    {
+      "id": "parklands-festival",
+      "name": "Parklands Festival",
+      "slug": "parklands-festival",
+      "city": "Albert Park, Auckland",
+      "region": "Auckland",
+      "location": "Albert Park, Auckland",
+      "website": "https://www.audiologytouring.com/festival/parklands",
+      "categories": ["festival", "DnB / Electronic, R18"],
+      "description": "Headliners: Hybrid Minds, Tempza.",
+      "source": {
+        "label": "Audiology Touring",
+        "url": "https://www.audiologytouring.com/festival/parklands"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-11-14",
+          "label": "14 Nov 2026, 2pm-10pm"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "DnB / Electronic, R18",
+        "attendance": 5000,
+        "promoter": "Audiology Touring"
+      }
+    },
+    {
+      "id": "matakanarama",
+      "name": "Matakanarama",
+      "slug": "matakanarama",
+      "city": "Cape Rodney Road, Leigh",
+      "region": "Auckland",
+      "location": "Cape Rodney Road, Leigh",
+      "website": "https://events.humanitix.com/matakanarama",
+      "categories": ["festival", "NYE / Multi-genre"],
+      "description": "",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://events.humanitix.com/matakanarama"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-29",
+          "end": "2027-01-01",
+          "label": "29 Dec 2026 – 1 Jan 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "NYE / Multi-genre"
+      }
+    },
+    {
+      "id": "highlife-nye",
+      "name": "Highlife NYE",
+      "slug": "highlife-nye",
+      "city": "Waiheke Island",
+      "region": "Auckland",
+      "location": "Waiheke Island",
+      "website": "https://highlifenye.co.nz/",
+      "categories": ["festival", "NYE / Boutique, dance"],
+      "description": "Strictly 23+. Vineyard setting.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://highlifenye.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-31",
+          "end": "2027-01-01",
+          "label": "31 Dec 2026 – 1 Jan 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "NYE / Boutique, dance",
+        "attendance": 4000
+      }
+    },
+    {
+      "id": "lakes-festival",
+      "name": "Lakes Festival",
+      "slug": "lakes-festival",
+      "city": "Hagley Park, Christchurch",
+      "region": "Canterbury",
+      "location": "Hagley Park, Christchurch",
+      "website": "https://www.lakesfestival.co.nz/",
+      "categories": ["festival", "Electronic"],
+      "description": "10 hours, international/national/local acts. | https://www.facebook.com/lakesfestivalnz/ · https://www.instagram.com/lakesfestivalnz/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.lakesfestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-28",
+          "label": "28 Dec 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Electronic"
+      }
+    },
+    {
+      "id": "8th-wonder",
+      "name": "8th Wonder",
+      "slug": "8th-wonder",
+      "city": "Village Green, Rotorua",
+      "region": "Bay of Plenty",
+      "location": "Village Green, Rotorua",
+      "categories": ["festival", "Reggae, roots, soul, dub, R&B, Indigenous"],
+      "description": "Inaugural edition. | '8th Wonder' (@8thwonder.live), ~990 followers",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://aotearoa-festivals.vercel.app"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-01-23",
+          "label": "23 Jan 2027 (Rotorua) + companion Brisbane date 30 Jan 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Reggae, roots, soul, dub, R&B, Indigenous",
+        "attendance": 5000
+      }
+    },
+    {
+      "id": "morph-festival",
+      "name": "Morph Festival",
+      "slug": "morph-festival",
+      "city": "Kumeū Showgrounds, Auckland (2027 venue not yet confirmed)",
+      "region": "Auckland",
+      "location": "Kumeū Showgrounds, Auckland (2027 venue not yet confirmed)",
+      "website": "https://www.morphfest.com/",
+      "categories": ["festival", "Wellness, art & music"],
+      "description": "100+ workshops. | https://www.facebook.com/morphfest · https://www.instagram.com/morphfest",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.morphfest.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-03-25",
+          "end": "2027-03-28",
+          "label": "25–28 Mar 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Wellness, art & music"
+      }
+    },
+    {
+      "id": "cross-st-music-festival",
+      "name": "Cross St Music Festival",
+      "slug": "cross-st-music-festival",
+      "city": "K Road area, Auckland",
+      "region": "Auckland",
+      "location": "K Road area, Auckland",
+      "website": "https://www.crossstmusicfestival.co.nz/",
+      "categories": ["festival", "Diverse / community, LGBTQ+-inclusive"],
+      "description": "No confirmed upcoming date found.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.crossstmusicfestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Diverse / community, LGBTQ+-inclusive"
+      }
+    },
+    {
+      "id": "outfield-music-food-and-arts-festival",
+      "name": "Outfield Music, Food & Arts Festival",
+      "slug": "outfield-music-food-and-arts-festival",
+      "city": "Te Awanga Downs, Hastings District",
+      "region": "Hawke's Bay",
+      "location": "Te Awanga Downs, Hastings District",
+      "website": "https://www.instagram.com/outfieldnz/",
+      "categories": ["festival", "Music, food, arts"],
+      "description": "2026 edition (31 Jan) already passed. Instagram confirms return for 2027. | https://www.instagram.com/outfieldnz/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.instagram.com/outfieldnz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Music, food, arts"
+      }
+    },
+    {
+      "id": "yatra-festival",
+      "name": "Yatra Festival",
+      "slug": "yatra-festival",
+      "city": "Golden Bay",
+      "region": "Tasman",
+      "location": "Golden Bay",
+      "website": "https://www.yatrafestival.co.nz/",
+      "categories": ["festival", "Psytrance, techno, chill, tribal - music/arts/wellness"],
+      "description": "4 music stages, workshops, healing zone, ceremonies. In ritual with MO:DEM for 2026. | https://www.instagram.com/yatrafestival/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.yatrafestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Psytrance, techno, chill, tribal - music/arts/wellness"
+      }
+    },
+    {
+      "id": "splore",
+      "name": "Splore",
+      "slug": "splore",
+      "city": "Tāpapakanga Regional Park",
+      "region": "Auckland",
+      "location": "Tāpapakanga Regional Park",
+      "lat": -36.79,
+      "lng": 175.04,
+      "website": "https://www.splore.net/",
+      "categories": ["festival", "Music, arts, camping"],
+      "description": "Ran 1998-2026 (28 years), NZ's longest-running music/arts/camping festival. Ended for good after cost-of-living-driven low ticket sales · All ages, 3-day | https://www.facebook.com/splore/ · https://www.instagram.com/splorefestival/",
+      "source": {
+        "label": "Mary Jane Wright & Jamie Larnach",
+        "url": "https://www.splore.net/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "defunct",
+        "genre": "Music, arts, camping",
+        "cost": "~$420 adult / $220 youth / free under-12",
+        "camping": true,
+        "attendance": 25000,
+        "promoter": "Mary Jane Wright & Jamie Larnach"
+      }
+    },
+    {
+      "id": "bay-dreams",
+      "name": "Bay Dreams",
+      "slug": "bay-dreams",
+      "city": "Tauranga Domain (+ South Island leg from 2019)",
+      "region": "Bay of Plenty",
+      "location": "Tauranga Domain (+ South Island leg from 2019)",
+      "lat": -37.68,
+      "lng": 176.16,
+      "website": "https://baydreams.co.nz/",
+      "categories": ["festival", "Hip hop, urban, dance"],
+      "description": "Ran 2016-2024. Called for hiatus from 2025, citing costs and difficulty securing headliners. Not officially declared dead · 18+, 2-day | https://www.facebook.com/baydreamsnorth · https://www.instagram.com/baydreams_nz/",
+      "source": {
+        "label": "Mitch Lowe & Toby Burrows",
+        "url": "https://baydreams.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "hiatus",
+        "genre": "Hip hop, urban, dance",
+        "camping": false,
+        "attendance": 20000,
+        "promoter": "Mitch Lowe & Toby Burrows"
+      }
+    },
+    {
+      "id": "one-love-festival",
+      "name": "One Love Festival",
+      "slug": "one-love-festival",
+      "city": "Tauranga Domain",
+      "region": "Bay of Plenty",
+      "location": "Tauranga Domain",
+      "website": "https://www.onelovefestival.co.nz/",
+      "categories": ["festival", "Reggae"],
+      "description": "NZ's biggest reggae festival. Ran most years 2014-2025 (2023 also cancelled). 2026 cancelled citing economic climate, not declared permanently dead. | https://www.facebook.com/onelovefestivalnz · https://www.instagram.com/onelovefestival_nz",
+      "source": {
+        "label": "Glenn Meikle & Matthew Spratt",
+        "url": "https://www.onelovefestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "hiatus",
+        "genre": "Reggae",
+        "cost": "~$175-189 2-day GA / ~$255 VIP (2025 pricing)",
+        "promoter": "Glenn Meikle & Matthew Spratt"
+      }
+    },
+    {
+      "id": "rippon-festival-tuki-festival",
+      "name": "Rippon Festival / Tuki Festival",
+      "slug": "rippon-festival-tuki-festival",
+      "city": "Rippon Vineyard / Glendhu Bay, Wānaka",
+      "region": "Otago",
+      "location": "Rippon Vineyard / Glendhu Bay, Wānaka",
+      "categories": ["festival", "NZ homegrown showcase"],
+      "description": "Rippon ran biennially 1998-2014; successor Tuki ran 2018 and 2020 only. Org says they're reshaping the event, not declaring it dead.",
+      "source": {
+        "label": "Lake Wānaka SouNZ",
+        "url": "https://aotearoa-festivals.vercel.app"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "hiatus",
+        "genre": "NZ homegrown showcase",
+        "promoter": "Lake Wānaka SouNZ"
+      }
+    },
+    {
+      "id": "big-day-out-nz",
+      "name": "Big Day Out (NZ)",
+      "slug": "big-day-out-nz",
+      "city": "Auckland, various sites",
+      "region": "Auckland",
+      "location": "Auckland, various sites",
+      "categories": ["festival", "Multi-genre rock/alt/dance touring festival"],
+      "description": "Ran 1994-2014, peak crowds 30-40k in the 2000s. NZ leg cancelled multiple times before being permanently axed for 2015.",
+      "source": {
+        "label": "C3 Presents",
+        "url": "https://aotearoa-festivals.vercel.app"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "defunct",
+        "genre": "Multi-genre rock/alt/dance touring festival",
+        "promoter": "C3 Presents"
+      }
+    },
+    {
+      "id": "raggamuffin-music-festival",
+      "name": "Raggamuffin Music Festival",
+      "slug": "raggamuffin-music-festival",
+      "city": "Rotorua (2008-2014), then Auckland (2015-2017)",
+      "region": "Bay of Plenty / Auckland",
+      "location": "Rotorua (2008-2014), then Auckland (2015-2017)",
+      "categories": ["festival", "Reggae"],
+      "description": "Raggamuffin X (10th anniversary, Feb 2017) announced as the final festival, citing slow ticket sales.",
+      "source": {
+        "label": "Andrew McManus",
+        "url": "https://aotearoa-festivals.vercel.app"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "defunct",
+        "genre": "Reggae",
+        "promoter": "Andrew McManus"
+      }
+    },
+    {
+      "id": "the-gathering",
+      "name": "The Gathering",
+      "slug": "the-gathering",
+      "city": "Canaan Downs, Tākaka",
+      "region": "Tasman",
+      "location": "Canaan Downs, Tākaka",
+      "website": "https://thegathering.co.nz/",
+      "categories": ["festival", "Early NZ electronic / goa trance"],
+      "description": "Ran ~6 NYE editions from 1996/97. Now treated as a foundational NZ dance-culture legend rather than an ongoing event.",
+      "source": {
+        "label": "Murray Kingi",
+        "url": "https://thegathering.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "defunct",
+        "genre": "Early NZ electronic / goa trance",
+        "promoter": "Murray Kingi"
+      }
+    },
+    {
+      "id": "chronophonium",
+      "name": "Chronophonium",
+      "slug": "chronophonium",
+      "city": "Tapu, Coromandel (previously Tangihua Forest, Whangārei)",
+      "region": "Waikato / Northland",
+      "location": "Tapu, Coromandel (previously Tangihua Forest, Whangārei)",
+      "website": "https://chronophonium.tv/",
+      "categories": ["festival", "Electronica, indie/experimental, psytrance/DIY"],
+      "description": "No end announcement found, but no 2023-2026 listings either. Likely dormant.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://chronophonium.tv/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "unconfirmed",
+        "genre": "Electronica, indie/experimental, psytrance/DIY"
+      }
+    },
+    {
+      "id": "wanderlust-nz",
+      "name": "Wanderlust NZ",
+      "slug": "wanderlust-nz",
+      "city": "Great Lake Taupō",
+      "region": "Waikato",
+      "location": "Great Lake Taupō",
+      "categories": ["festival", "Yoga + live music"],
+      "description": "NZ leg of global Wanderlust brand. Current activity in NZ specifically unconfirmed.",
+      "source": {
+        "label": "Jacque & Jonnie Halstead",
+        "url": "https://aotearoa-festivals.vercel.app"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "unconfirmed",
+        "genre": "Yoga + live music",
+        "promoter": "Jacque & Jonnie Halstead"
+      }
+    },
+    {
+      "id": "dimension-festival",
+      "name": "Dimension Festival",
+      "slug": "dimension-festival",
+      "city": "Northland",
+      "region": "Northland",
+      "location": "Northland",
+      "website": "https://www.dimension.nz/",
+      "categories": ["festival", "Electronic, single-stage (Astral Arena)"],
+      "description": "Needs 600 tickets sold by 1 Sep 2026 to proceed, otherwise fully refunded and cancelled. | https://www.facebook.com/dimensionfestival/ · https://www.instagram.com/dimensionfestivalnz",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.dimension.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-02-05",
+          "end": "2027-02-08",
+          "label": "5–8 Feb 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Electronic, single-stage (Astral Arena)"
+      }
+    },
+    {
+      "id": "tahi-festival",
+      "name": "TAHI Festival",
+      "slug": "tahi-festival",
+      "city": "Wellington",
+      "region": "Wellington",
+      "location": "Wellington",
+      "website": "https://bats.co.nz/whats-on/tahi-festival-2025/",
+      "categories": ["festival", "Solo performance / theatre (not music)"],
+      "description": "NZ's festival of solo performance, storytellers from established to emerging.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://bats.co.nz/whats-on/tahi-festival-2025/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-09-10",
+          "end": "2026-09-20",
+          "label": "10–20 Sep 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Solo performance / theatre (not music)"
+      }
+    },
+    {
+      "id": "resonance-festival",
+      "name": "Resonance Festival",
+      "slug": "resonance-festival",
+      "city": "North Auckland / South Head",
+      "region": "Auckland",
+      "location": "North Auckland / South Head",
+      "website": "https://www.resonancefestival.nz/",
+      "categories": ["festival", "Bass music"],
+      "description": "90 min from Auckland CBD. You personally follow this one on Instagram. | https://www.instagram.com/resonancefestivalnz/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.resonancefestival.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Bass music"
+      }
+    },
+    {
+      "id": "laneway-festival-nz",
+      "name": "Laneway Festival NZ",
+      "slug": "laneway-festival-nz",
+      "city": "Western Springs Stadium, Auckland",
+      "region": "Auckland",
+      "location": "Western Springs Stadium, Auckland",
+      "website": "https://www.lanewayfestival.com/auckland/",
+      "categories": ["festival", "Multi-genre, indie/alt"],
+      "description": "Confirmed returning 2027 after a record-breaking 2026 year. Co-founders Danny Rogers and Jerome Borazio. | https://www.facebook.com/lanewayfestival · https://www.instagram.com/lanewayfest/?hl=en",
+      "source": {
+        "label": "St Jerome's Laneway NZ Limited",
+        "url": "https://www.lanewayfestival.com/auckland/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Multi-genre, indie/alt",
+        "attendance": 15000,
+        "promoter": "St Jerome's Laneway NZ Limited"
+      }
+    },
+    {
+      "id": "ecstatic-paradise-festival",
+      "name": "Ecstatic Paradise Festival",
+      "slug": "ecstatic-paradise-festival",
+      "city": "Mid-North, near Kerikeri / Matauri Bay",
+      "region": "Northland",
+      "location": "Mid-North, near Kerikeri / Matauri Bay",
+      "website": "https://www.ecstaticparadise.co/",
+      "categories": ["festival", "Wellness retreat, electronic/ambient"],
+      "description": "2-night retreat. Lineup/dates \"coming soon\" as of last check.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.ecstaticparadise.co/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Wellness retreat, electronic/ambient"
+      }
+    },
+    {
+      "id": "in-bloom-festival",
+      "name": "In Bloom Festival",
+      "slug": "in-bloom-festival",
+      "city": "Waterfront, Auckland",
+      "region": "Auckland",
+      "location": "Waterfront, Auckland",
+      "website": "https://www.instagram.com/inbloomfest_nz/",
+      "categories": ["festival", "Dance"],
+      "description": "Waterfront dance party. | https://www.instagram.com/inbloomfest_nz/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.instagram.com/inbloomfest_nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Dance"
+      }
+    },
+    {
+      "id": "brooklyn-twilight-festival",
+      "name": "Brooklyn Twilight Festival",
+      "slug": "brooklyn-twilight-festival",
+      "city": "Harrison Street, Brooklyn, Wellington",
+      "region": "Wellington",
+      "location": "Harrison Street, Brooklyn, Wellington",
+      "website": "https://www.brooklynfestival.co.nz/",
+      "categories": ["festival", "Community festival"],
+      "description": "Wellington suburb community festival, no 2026 date confirmed yet.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.brooklynfestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2025-11-01",
+          "end": "2025-11-28",
+          "label": "Annual, last held 15 Nov 2025"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Community festival"
+      }
+    },
+    {
+      "id": "omnishakti-festival",
+      "name": "Omnishakti Festival",
+      "slug": "omnishakti-festival",
+      "city": "Takaka Hill, Golden Bay",
+      "region": "Tasman",
+      "location": "Takaka Hill, Golden Bay",
+      "website": "https://www.omnishakti.nz/",
+      "categories": ["festival", "Electronic, visual art, workshops"],
+      "description": "No editions found since 2021. Likely dormant or defunct.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.omnishakti.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2021-02-01",
+          "end": "2021-02-28",
+          "label": "Last confirmed 26-28 Feb 2021"
+        }
+      ],
+      "festival": {
+        "status": "unconfirmed",
+        "genre": "Electronic, visual art, workshops"
+      }
+    },
+    {
+      "id": "auckland-city-limits",
+      "name": "Auckland City Limits",
+      "slug": "auckland-city-limits",
+      "city": "Western Springs, Auckland",
+      "region": "Auckland",
+      "location": "Western Springs, Auckland",
+      "website": "http://www.aucklandcitylimits.com/",
+      "categories": ["festival", "Multi-genre, 4 stages"],
+      "description": "Official site frozen since thanking fans for 2017. Likely dormant or defunct.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://www.aucklandcitylimits.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "unconfirmed",
+        "genre": "Multi-genre, 4 stages",
+        "attendance": 20000
+      }
+    },
+    {
+      "id": "oasis-festival",
+      "name": "Oasis Festival",
+      "slug": "oasis-festival",
+      "city": "Unknown",
+      "region": "Unknown",
+      "location": "Unknown",
+      "categories": ["festival", "Unknown"],
+      "description": "Only 2025 edition confirmed in search.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://aotearoa-festivals.vercel.app"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Unknown"
+      }
+    },
+    {
+      "id": "golden-lights-music-festival",
+      "name": "Golden Lights Music Festival",
+      "slug": "golden-lights-music-festival",
+      "city": "Trusts Arena, Henderson, Auckland",
+      "region": "Auckland",
+      "location": "Trusts Arena, Henderson, Auckland",
+      "categories": ["festival", "Multi-genre"],
+      "description": "Ran 2024 and 2025 editions, nothing confirmed since.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://aotearoa-festivals.vercel.app"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Multi-genre"
+      }
+    },
+    {
+      "id": "taniwha-s-den",
+      "name": "Taniwha's Den",
+      "slug": "taniwha-s-den",
+      "city": "172 Moeraki Rd, Hinakura",
+      "region": "Wairarapa",
+      "location": "172 Moeraki Rd, Hinakura",
+      "website": "https://taniwhasden.nz/",
+      "categories": ["festival", "Electronic music and art"],
+      "description": "Annual, east of Martinborough. 3 days, 2 nights camping. | https://www.facebook.com/taniwhasden · https://www.instagram.com/taniwhasden_/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://taniwhasden.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-02-06",
+          "end": "2027-02-08",
+          "label": "6–8 Feb 2027"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Electronic music and art",
+        "cost": "~$375 (2025 full ticket)",
+        "camping": true
+      }
+    },
+    {
+      "id": "le-currents",
+      "name": "Le Currents",
+      "slug": "le-currents",
+      "city": "Riverside Park, Taupō",
+      "region": "Waikato",
+      "location": "Riverside Park, Taupō",
+      "website": "https://lecurrents.com/",
+      "categories": ["festival", "Music, culture and arts"],
+      "description": "Expanded to 2 days for 2026 (first time since launching 2020). Headliners: Ocean Alley, Fat Freddy's Drop, Carl Cox. | https://www.facebook.com/lecurrents · https://www.instagram.com/lecurrents_nz/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://lecurrents.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-27",
+          "end": "2026-12-28",
+          "label": "27–28 Dec 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Music, culture and arts",
+        "attendance": 3000
+      }
+    },
+    {
+      "id": "octoblast",
+      "name": "Octoblast",
+      "slug": "octoblast",
+      "city": "Te Arai",
+      "region": "Auckland",
+      "location": "Te Arai",
+      "website": "https://audio-art.7am.events/",
+      "categories": ["festival", "Psytrance, techno, bass"],
+      "description": "3 stages. Opus sound system, UV dance floor, projection mapping. | https://www.facebook.com/AudioArtNZ/ · https://www.instagram.com/mysticrealmsfestivalnz/",
+      "source": {
+        "label": "Audio Art",
+        "url": "https://audio-art.7am.events/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-10-22",
+          "end": "2026-10-25",
+          "label": "22-25 Oct 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Psytrance, techno, bass",
+        "promoter": "Audio Art"
+      }
+    },
+    {
+      "id": "rolling-hertz",
+      "name": "Rolling Hertz",
+      "slug": "rolling-hertz",
+      "city": "Cobb Valley, Upper Takaka",
+      "region": "Tasman",
+      "location": "Cobb Valley, Upper Takaka",
+      "website": "https://www.rollinghertz.co.nz/",
+      "categories": ["festival", "Underground music, art, community"],
+      "description": "Same venue as Twisted Frequency, different weekend. Run by Sound Delinquents, a Tasman-region youth collective. | https://www.instagram.com/sounddelinquents (handle used for Rolling Hertz socials)",
+      "source": {
+        "label": "Sound Delinquents",
+        "url": "https://www.rollinghertz.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Underground music, art, community",
+        "promoter": "Sound Delinquents"
+      }
+    },
+    {
+      "id": "mystic-realms",
+      "name": "Mystic Realms",
+      "slug": "mystic-realms",
+      "city": "Te Arai (186 Atkins Rd)",
+      "region": "Auckland",
+      "location": "Te Arai (186 Atkins Rd)",
+      "website": "https://audio-art.7am.events/",
+      "categories": ["festival", "House, techno, bass, DnB, psytech, psytrance"],
+      "description": "Audio Art's other festival, companion to Octoblast. 2 stages. | https://www.facebook.com/AudioArtNZ/ · https://www.instagram.com/mysticrealmsfestivalnz/",
+      "source": {
+        "label": "Audio Art",
+        "url": "https://audio-art.7am.events/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "House, techno, bass, DnB, psytech, psytrance",
+        "promoter": "Audio Art"
+      }
+    },
+    {
+      "id": "mayhem",
+      "name": "Mayhem",
+      "slug": "mayhem",
+      "city": "Auckland and Christchurch",
+      "region": "Auckland / Canterbury",
+      "location": "Auckland and Christchurch",
+      "website": "https://www.sub180.co.nz/mayhem",
+      "categories": ["festival", "Drum & bass, arena shows"],
+      "description": "Sub180's flagship DnB arena show, runs in both cities most years. | https://www.facebook.com/SUB180NZ/ · https://www.instagram.com/sub180nz/",
+      "source": {
+        "label": "Sub180 Entertainment",
+        "url": "https://www.sub180.co.nz/mayhem"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Drum & bass, arena shows",
+        "promoter": "Sub180 Entertainment"
+      }
+    },
+    {
+      "id": "urban-jungle",
+      "name": "Urban Jungle",
+      "slug": "urban-jungle",
+      "city": "Auckland (Vic Park) and Christchurch (Burwood)",
+      "region": "Auckland / Canterbury",
+      "location": "Auckland (Vic Park) and Christchurch (Burwood)",
+      "website": "https://www.sub180.co.nz/",
+      "categories": ["festival", "Drum & bass, urban, hip hop"],
+      "description": "Sub180's other flagship event series. | https://www.facebook.com/SUB180NZ/ · https://www.instagram.com/sub180nz/",
+      "source": {
+        "label": "Sub180 Entertainment",
+        "url": "https://www.sub180.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Drum & bass, urban, hip hop",
+        "promoter": "Sub180 Entertainment"
+      }
+    },
+    {
+      "id": "ultra-new-zealand",
+      "name": "Ultra New Zealand",
+      "slug": "ultra-new-zealand",
+      "city": "Wellington Waterfront",
+      "region": "Wellington",
+      "location": "Wellington Waterfront",
+      "lat": -41.29,
+      "lng": 174.78,
+      "website": "https://ultranewzealand.com/",
+      "categories": ["festival", "EDM / Electronic"],
+      "description": "Inaugural NZ edition of the global Ultra brand. One-day, 18+, 4 stages. 30+ international artists including DJ Snake, The Chainsmokers, Zedd, Pendulum. | https://www.facebook.com/ultranewzealand · https://www.instagram.com/ultranewzealand",
+      "source": {
+        "label": "Audiology Touring",
+        "url": "https://ultranewzealand.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-04-10",
+          "label": "10 Apr 2026 (inaugural; future NZ dates TBC)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "EDM / Electronic",
+        "camping": false,
+        "ticketPrice": "$180–$300",
+        "vibe": "World-class EDM spectacle on the waterfront",
+        "promoter": "Audiology Touring"
+      }
+    },
+    {
+      "id": "synthony",
+      "name": "Synthony",
+      "slug": "synthony",
+      "city": "Auckland Domain",
+      "region": "Auckland",
+      "location": "Auckland Domain",
+      "website": "https://synthony.com/",
+      "categories": ["festival", "Classical / Electronic fusion"],
+      "description": "Annual one-day festival with claimed ~40,000+ attendance — Australasia's largest by that measure. Full live orchestra performing EDM. Two stages, food/wine villages, amusement rides. | https://www.facebook.com/synthonyshow · https://www.instagram.com/synthony",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://synthony.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-03-01",
+          "end": "2026-03-28",
+          "label": "20 Mar 2027 (NZ edition); 2026 NZ edition was 21 Mar 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Classical / Electronic fusion"
+      }
+    },
+    {
+      "id": "snow-machine-festival",
+      "name": "Snow Machine Festival",
+      "slug": "snow-machine-festival",
+      "city": "Coronet Peak / The Remarkables, Queenstown",
+      "region": "Otago",
+      "location": "Coronet Peak / The Remarkables, Queenstown",
+      "website": "https://nz.snow-machine.com/",
+      "categories": ["festival", "Electronic / EDM"],
+      "description": "Combines world-class electronic music with snow sports. 30+ artists across 8 stages. 2026 lineup includes Chet Faker, Illy, Ninajirachi, Kanine. Annual, 5th edition in 2026. | https://www.facebook.com/snowmachinefest · https://www.instagram.com/snowmachinefest/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://nz.snow-machine.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-09-08",
+          "end": "2026-09-13",
+          "label": "8–13 Sep 2026"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Electronic / EDM"
+      }
+    },
+    {
+      "id": "te-matatini",
+      "name": "Te Matatini",
+      "slug": "te-matatini",
+      "city": "Pukekura Bowl of Brooklands, New Plymouth",
+      "region": "Taranaki",
+      "location": "Pukekura Bowl of Brooklands, New Plymouth",
+      "website": "https://tematatini.co.nz/",
+      "categories": ["festival", "Māori kapa haka / Cultural performing arts"],
+      "description": "NZ's premier national kapa haka competition and celebration. Biennial (odd years only). Draws tens of thousands. 2027 edition confirmed for New Plymouth; not held in 2026. | Te Matatini Society Incorporated (~478K followers) - 'The Olympics of Māori Performing Arts' · https://www.instagram.com/te_matatini",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://tematatini.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-02-22",
+          "end": "2027-02-27",
+          "label": "22–27 Feb 2027 (Te Matatini o Ngā Taniwha 2027)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Māori kapa haka / Cultural performing arts",
+        "attendance": 40000
+      }
+    },
+    {
+      "id": "world-buskers-festival",
+      "name": "World Buskers Festival",
+      "slug": "world-buskers-festival",
+      "city": "Cathedral Square and street venues, Christchurch",
+      "region": "Canterbury",
+      "location": "Cathedral Square and street venues, Christchurch",
+      "website": "https://worldbuskersfestival.co.nz/",
+      "categories": ["festival", "Street performance — music, comedy, acrobatics, circus"],
+      "description": "Annual 10-day free festival since 1993. 5 city pitches and 2 pop-up locations. International and local performers. Significant live music component. | https://www.facebook.com/WorldBuskersFestivalchch · https://www.instagram.com/worldbuskersfestival/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://worldbuskersfestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-02-01",
+          "end": "2026-02-28",
+          "label": "21–31 Jan 2027 (UPDATED - later than repo's seed date; 2026 ran 23 Jan-1 Feb)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Street performance — music, comedy, acrobatics, circus",
+        "cost": "Free"
+      }
+    },
+    {
+      "id": "afterglow-festival",
+      "name": "Afterglow Festival",
+      "slug": "afterglow-festival",
+      "city": "Aotea / Great Barrier Island",
+      "region": "Auckland",
+      "location": "Aotea / Great Barrier Island",
+      "website": "https://afterglowfestival.nz/",
+      "categories": ["festival", "Indie / Roots / Eclectic"],
+      "description": "All-NZ artist lineup. Billed as NZ's most remote music festival; community-focused, supports local Aotea economy. Debut ~2025.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://afterglowfestival.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2027-01-01",
+          "end": "2027-01-28",
+          "label": "Jan 2027 (2026 was 24 Jan)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Indie / Roots / Eclectic"
+      }
+    },
+    {
+      "id": "aotearoa-new-zealand-festival-of-the-arts",
+      "name": "Aotearoa New Zealand Festival of the Arts",
+      "slug": "aotearoa-new-zealand-festival-of-the-arts",
+      "city": "Wellington, various venues",
+      "region": "Wellington",
+      "location": "Wellington, various venues",
+      "website": "https://festival.nz/",
+      "categories": ["festival", "Multi-arts (music, theatre, dance, interdisciplinary)"],
+      "description": "Biennial, 40th anniversary edition in 2026. Co-directed by Tama Waipara and Dolina Wehipeihana. 150,000+ attendees since 1986.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://festival.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-03-01",
+          "end": "2026-03-28",
+          "label": "24 Feb – 15 Mar 2026 ran; next ~2028"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Multi-arts (music, theatre, dance, interdisciplinary)"
+      }
+    },
+    {
+      "id": "waiheke-jazz-and-blues-festival",
+      "name": "Waiheke Jazz & Blues Festival",
+      "slug": "waiheke-jazz-and-blues-festival",
+      "city": "Goldie Estate and Batch Winery, Waiheke Island",
+      "region": "Auckland",
+      "location": "Goldie Estate and Batch Winery, Waiheke Island",
+      "website": "https://waihekejazzfestival.co.nz/",
+      "categories": ["festival", "Jazz / Blues"],
+      "description": "Four curated events across two island wineries: Good Friday Groove, Blues Revue, Jazz Sundowner, Jazz Long Lunch. Sells out every year. | https://www.facebook.com/waihekejazzfestival/ · https://www.instagram.com/waihekejazzfestival/",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://waihekejazzfestival.co.nz/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [],
+      "festival": {
+        "status": "active",
+        "genre": "Jazz / Blues"
+      }
+    },
+    {
+      "id": "harbour-street-jazz-and-blues-festival",
+      "name": "Harbour Street Jazz & Blues Festival",
+      "slug": "harbour-street-jazz-and-blues-festival",
+      "city": "Victorian Precinct, Oamaru",
+      "region": "Otago",
+      "location": "Victorian Precinct, Oamaru",
+      "website": "https://harbourstreetfestival.com/",
+      "categories": ["festival", "Jazz / Blues"],
+      "description": "Free to attend. 40+ musicians across indoor and street stages in Oamaru's heritage Victorian precinct.",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://harbourstreetfestival.com/"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-03-20",
+          "end": "2026-03-22",
+          "label": "20–22 Mar 2026 (Otago Anniversary Weekend, annual)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Jazz / Blues",
+        "cost": "Free"
+      }
+    },
+    {
+      "id": "aum-nye-festival",
+      "name": "Aum NYE Festival",
+      "slug": "aum-nye-festival",
+      "city": "Mangawhai area",
+      "region": "Auckland",
+      "location": "Mangawhai area",
+      "categories": [
+        "festival",
+        "Multi-genre / Arts / Wellness (electronic, live music, performance, healing)"
+      ],
+      "description": "Family-friendly camping festival with themed nights, wellness zones, and multiple stages. Distinct from AUM Festival (South Head) and Northern Bass (also Mangawhai area).",
+      "source": {
+        "label": "Aotearoa Festivals seed data",
+        "url": "https://aotearoa-festivals.vercel.app"
+      },
+      "lastVerified": "2026-09-02",
+      "verified": true,
+      "active": true,
+      "optOut": false,
+      "calendarDates": [
+        {
+          "start": "2026-12-01",
+          "end": "2026-12-28",
+          "label": "Late Dec 2026 (exact TBC)"
+        }
+      ],
+      "festival": {
+        "status": "active",
+        "genre": "Multi-genre / Arts / Wellness (electronic, live music, performance, healing)",
+        "camping": true,
+        "attendance": 3000
+      }
+    }
+  ]
+}

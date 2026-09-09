@@ -12,6 +12,7 @@ function isPlanStatus(value: unknown): value is PlanStatus {
   return value === 'interested' || value === 'planned';
 }
 
+/** Read the saved plan from localStorage, tolerating legacy formats. */
 export function readFestivalPlan(): FestivalPlan {
   if (typeof window === 'undefined') return {};
   try {
@@ -39,11 +40,13 @@ export function readFestivalPlan(): FestivalPlan {
   }
 }
 
+/** Persist the plan to localStorage. */
 export function writeFestivalPlan(plan: FestivalPlan): void {
   if (typeof window === 'undefined') return;
   window.localStorage.setItem(PLAN_STORAGE_KEY, JSON.stringify(plan));
 }
 
+/** Set one festival's plan status, returning a new plan object. */
 export function setPlanStatus(
   plan: FestivalPlan,
   slug: string,

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { prisma } from '@/lib/prisma';
-import type { Artist } from '@/generated/prisma';
+import { listArtists } from '@/lib/festival-data';
+import type { Artist } from '@/lib/festival-types';
 import Pagination from '@/components/Pagination';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -24,47 +24,9 @@ interface PageProps {
 }
 
 function SocialIcons({ artist }: { artist: Artist }) {
-  return (
-    <div className="flex gap-2">
-      {artist.instagram && (
-        <a
-          href={`https://instagram.com/${artist.instagram.replace(/^@/, '')}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-muted-foreground hover:text-primary"
-          title="Instagram"
-        >
-          IG
-        </a>
-      )}
-      {artist.soundcloud && (
-        <a
-          href={
-            artist.soundcloud.startsWith('http')
-              ? artist.soundcloud
-              : `https://soundcloud.com/${artist.soundcloud}`
-          }
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-muted-foreground hover:text-primary"
-          title="SoundCloud"
-        >
-          SC
-        </a>
-      )}
-      {artist.raUrl && (
-        <a
-          href={artist.raUrl.startsWith('http') ? artist.raUrl : `https://ra.co/${artist.raUrl}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-muted-foreground hover:text-primary"
-          title="Resident Advisor"
-        >
-          RA
-        </a>
-      )}
-    </div>
-  );
+  return artist.homeCity ? (
+    <span className="text-xs text-muted-foreground">{artist.homeCity}</span>
+  ) : null;
 }
 
 export default async function ArtistsPage({ searchParams }: PageProps) {
@@ -72,20 +34,20 @@ export default async function ArtistsPage({ searchParams }: PageProps) {
   const requestedPage = Math.max(1, Math.floor(Number(page)) || 1);
   const sortField = sort === 'genre' || sort === 'city' ? sort : 'name';
 
-  const where = {
-    ...(genre ? { genre: { contains: genre, mode: 'insensitive' as const } } : {}),
-    ...(city ? { homeCity: { contains: city, mode: 'insensitive' as const } } : {}),
-  };
-
-  const [totalCount, artists] = await Promise.all([
-    prisma.artist.count({ where }),
-    prisma.artist.findMany({
-      orderBy: { [sortField]: 'asc' },
-      where,
-      skip: (requestedPage - 1) * PAGE_SIZE,
-      take: PAGE_SIZE,
-    }),
-  ]);
+  const all = listArtists();
+  const filtered = all.filter(
+    (a) =>
+      (!genre || a.genre?.toLowerCase().includes(genre.toLowerCase())) &&
+      (!city || a.homeCity?.toLowerCase().includes(city.toLowerCase()))
+  );
+  const totalCount = filtered.length;
+  const artists = filtered
+    .sort((a, b) =>
+      (a[sortField as 'name' | 'genre' | 'homeCity'] ?? '').localeCompare(
+        b[sortField as 'name' | 'genre' | 'homeCity'] ?? ''
+      )
+    )
+    .slice((requestedPage - 1) * PAGE_SIZE, requestedPage * PAGE_SIZE);
 
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
   const currentPage = Math.min(requestedPage, totalPages);
@@ -182,7 +144,7 @@ export default async function ArtistsPage({ searchParams }: PageProps) {
                   className="border-b border-border transition-colors hover:bg-muted/50 dark:border-border dark:hover:bg-muted/50"
                 >
                   <td className="py-2.5 pr-4">
-                    <Link href={`/artists/${a.slug}`} className="font-medium hover:underline">
+                    <Link href={`/artists/${a.id}`} className="font-medium hover:underline">
                       {a.name}
                     </Link>
                   </td>

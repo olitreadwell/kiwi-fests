@@ -3,9 +3,9 @@ export const revalidate = 3600;
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { prisma } from '@/lib/prisma';
-import type { Festival, Promoter } from '@/generated/prisma';
-import { Region } from '@/generated/prisma';
+import { listRegionFestivals } from '@/lib/festival-data';
+import type { Festival, Promoter } from '@/lib/festival-types';
+import { Region } from '@/lib/festival-types';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { FestivalStatusBadge } from '@/components/FestivalStatusBadge';
 
@@ -90,18 +90,10 @@ export default async function RegionDetailPage({
 
   const regionLabel = REGION_LABELS[enumVal];
 
-  let festivals: FestivalWithPromoter[] = [];
-  try {
-    festivals = await prisma.festival.findMany({
-      where: { region: enumVal, approved: true },
-      orderBy: [{ startDate: 'asc' }, { name: 'asc' }],
-      include: { promoter: true },
-    });
-  } catch (error) {
-    // No database during static export: render the empty state; ISR re-runs
-    // this with real data once DATABASE_URL is set.
-    console.warn('regions/[region]: database unavailable, rendering empty region', error);
-  }
+  const festivals: FestivalWithPromoter[] = listRegionFestivals(enumVal).sort((a, b) => {
+    if (a.startDate && b.startDate) return a.startDate.getTime() - b.startDate.getTime();
+    return a.name.localeCompare(b.name);
+  });
 
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-4 py-8">

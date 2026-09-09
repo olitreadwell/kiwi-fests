@@ -1,56 +1,32 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
-const CI = !!process.env.CI;
+// Bundled Chromium is not supported on older macOS; use system Chrome there.
+// CI (ubuntu) keeps the bundled browser via `npx playwright install`.
+const channel =
+  process.env.PLAYWRIGHT_CHANNEL ?? (process.platform === 'darwin' ? 'chrome' : undefined);
+// Overridable so parallel worktrees do not fight over one port.
+const port = Number(process.env.E2E_PORT ?? 3123);
 
 export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
-  forbidOnly: CI,
-  retries: CI ? 2 : 0,
-  workers: CI ? 4 : undefined,
-  reporter: CI ? 'github' : 'html',
-  snapshotDir: './e2e/__snapshots__',
+  retries: 0,
   timeout: 60_000,
+  reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: process.env.BASE_URL ?? 'http://localhost:3000',
+    baseURL: `http://127.0.0.1:${port}`,
     trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-    navigationTimeout: 30_000,
+  },
+  webServer: {
+    command: `pnpm dev -p ${port}`,
+    url: `http://127.0.0.1:${port}`,
+    reuseExistingServer: false,
+    timeout: 120_000,
+    env: {
+      CONTACT_TO: 'test-contact@ot.mozmail.com',
+    },
   },
   projects: [
-    {
-      name: 'mobile',
-      use: {
-        viewport: { width: 375, height: 812 },
-        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) Mobile',
-        isMobile: true,
-        hasTouch: true,
-      },
-    },
-    {
-      name: 'tablet',
-      use: {
-        viewport: { width: 768, height: 1024 },
-      },
-    },
-    {
-      name: 'laptop',
-      use: {
-        viewport: { width: 1280, height: 800 },
-      },
-    },
-    {
-      name: 'desktop',
-      use: {
-        viewport: { width: 1920, height: 1080 },
-      },
-    },
+    { name: 'chromium', use: { ...devices['Desktop Chrome'], ...(channel ? { channel } : {}) } },
   ],
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://127.0.0.1:3000',
-    reuseExistingServer: true,
-    timeout: 120_000,
-  },
 });

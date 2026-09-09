@@ -11,8 +11,8 @@ export default function FestivalNotFound() {
       </Link>
       <h1 className="text-3xl font-semibold tracking-tight">Festival not found</h1>
       <p className="mt-3 text-sm text-muted-foreground dark:text-muted-foreground">
-        We couldn't find the festival you&apos;re looking for. It may have been removed or the URL
-        may be incorrect.
+        We couldn&apos;t find the festival you&apos;re looking for. It may have been removed or the
+        URL may be incorrect.
       </p>
     </main>
   );

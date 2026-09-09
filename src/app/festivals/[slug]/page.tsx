@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
-import { prisma } from '@/lib/prisma';
-import type { Festival, Artist, Promoter } from '@/generated/prisma';
+import { getFestivalBySlug, listAllFestivals } from '@/lib/festival-data';
+import type { Festival, LineupEntry, Promoter } from '@/lib/festival-types';
 import { formatRegion } from '@/lib/format';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { FestivalStatusBadge } from '@/components/FestivalStatusBadge';
@@ -12,31 +12,14 @@ import { Reveal } from '@/components/Reveal';
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  try {
-    const festivals = await prisma.festival.findMany({
-      where: { approved: true },
-      select: { slug: true },
-    });
-    return festivals.map((festival) => ({ slug: festival.slug }));
-  } catch (error) {
-    console.warn(
-      'generateStaticParams: could not reach the database, falling back to on-demand rendering for /festivals/[slug]',
-      error
-    );
-    return [];
-  }
+  return listAllFestivals().map((festival) => ({ slug: festival.slug }));
 }
 
 // ---------------------------------------------------------------------------
 // Types returned from the query
 // ---------------------------------------------------------------------------
 
-type LineupEntryWithArtist = {
-  id: string;
-  year: number;
-  isHeadliner: boolean;
-  artist: Artist;
-};
+type LineupEntryWithArtist = LineupEntry;
 
 type FestivalWithRelations = Festival & {
   promoter: Promoter | null;
@@ -53,10 +36,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const festival = await prisma.festival.findUnique({
-    where: { slug },
-    select: { name: true },
-  });
+  const festival = getFestivalBySlug(slug);
   if (!festival) return { title: 'Festival Not Found' };
   return { title: `${festival.name} — Aotearoa Festivals` };
 }
@@ -91,41 +71,20 @@ export default async function FestivalDetailPage({
 }) {
   const { slug } = await params;
 
-  const festival = (await prisma.festival.findUnique({
-    where: { slug },
-    include: {
-      promoter: true,
-      lineups: {
-        include: { artist: true },
-        orderBy: [{ isHeadliner: 'desc' }, { artist: { name: 'asc' } }],
-      },
-    },
-  })) as FestivalWithRelations | null;
+  const festival = getFestivalBySlug(slug) as FestivalWithRelations | null;
 
   if (!festival) {
     notFound();
   }
 
   // Similar festivals: same genre or same region, excluding current
-  const similar = await prisma.festival.findMany({
-    where: {
-      approved: true,
-      id: { not: festival.id },
-      OR: [
-        ...(festival.genre
-          ? [
-              {
-                genre: { contains: festival.genre.split(',')[0]?.trim() ?? '' },
-              },
-            ]
-          : []),
-        ...(festival.region ? [{ region: festival.region }] : []),
-      ],
-    },
-    take: 3,
-    orderBy: [{ startDate: 'desc' }],
-    select: { id: true, name: true, slug: true, genre: true, region: true },
-  });
+  const genreKey = festival.genre?.split(',')[0]?.trim() ?? '';
+  const similar = listAllFestivals()
+    .filter(
+      (f) => f.id !== festival.id && (f.genre?.includes(genreKey) || f.region === festival.region)
+    )
+    .slice(0, 3)
+    .map((f) => ({ id: f.id, name: f.name, slug: f.slug, genre: f.genre, region: f.region }));
 
   // Group lineup entries by year, descending
   const lineupByYear = new Map<number, LineupEntryWithArtist[]>();
@@ -289,7 +248,7 @@ export default async function FestivalDetailPage({
                 Promoter
               </h2>
               <a
-                href={`/promoters/${festival.promoter.slug}`}
+                href={`/promoters/${festival.promoter.id}`}
                 className="group mt-3 flex items-center justify-between rounded-2xl border border-border bg-card p-5 transition-all duration-300 ease-out-expo hover:border-primary/30 hover:shadow-[0_12px_32px_-20px_rgba(163,23,46,0.35)]"
               >
                 <span className="text-base font-semibold tracking-tight">
@@ -329,7 +288,7 @@ export default async function FestivalDetailPage({
                             {headliners.map((entry) => (
                               <li key={entry.id}>
                                 <a
-                                  href={`/artists/${entry.artist.slug}`}
+                                  href={`/artists/${entry.artist.id}`}
                                   className="inline-block rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18),0_6px_16px_-8px_rgba(163,23,46,0.5)] transition-all duration-300 ease-out-expo hover:bg-primary/90 active:scale-[0.98]"
                                 >
                                   {entry.artist.name}
@@ -344,7 +303,7 @@ export default async function FestivalDetailPage({
                           {others.map((entry) => (
                             <li key={entry.id}>
                               <a
-                                href={`/artists/${entry.artist.slug}`}
+                                href={`/artists/${entry.artist.id}`}
                                 className="inline-block rounded-full border border-border bg-background px-4 py-1.5 text-sm text-foreground transition-all duration-300 ease-out-expo hover:border-foreground/30 hover:bg-muted/50 active:scale-[0.98]"
                               >
                                 {entry.artist.name}

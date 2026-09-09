@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { formatDateRange, formatRegion, formatStatus, slugify } from '@/lib/format';
-import type { FestivalStatus } from '@/generated/prisma';
+import type { FestivalStatus } from '@/lib/festival-types';
 
 describe('formatRegion', () => {
   it('returns the macron label for MANAWATU_WHANGANUI', () => {

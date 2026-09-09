@@ -1,55 +1,42 @@
 import { Feed } from 'feed';
-import { prisma } from '@/lib/prisma';
-import { FestivalStatus } from '@/generated/prisma';
+import { buildExportFromSource } from '@/lib/db';
+import { getSiteConfig } from '@/lib/site-config';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://aotearoa-festivals.nz';
-
-  const festivals = await prisma.festival.findMany({
-    where: {
-      approved: true,
-      status: { in: [FestivalStatus.ACTIVE, FestivalStatus.TBC] },
-    },
-    orderBy: [{ startDate: 'asc' }, { name: 'asc' }],
-    select: {
-      name: true,
-      slug: true,
-      genre: true,
-      dateText: true,
-      notes: true,
-      startDate: true,
-      updatedAt: true,
-      region: true,
-    },
-  });
-
+/**
+ * GET /feed.xml — RSS feed of new and updated listings. Consumers include
+ * aggregators and the community review loop.
+ */
+export async function GET(): Promise<Response> {
+  const config = getSiteConfig();
+  const baseUrl = config.baseUrl || 'https://example.com';
+  const dataset = await buildExportFromSource();
   const feed = new Feed({
-    title: 'Aotearoa Festivals',
-    description: 'Upcoming New Zealand music and arts festivals',
-    id: baseUrl + '/',
-    link: baseUrl + '/',
-    feedLinks: { rss: baseUrl + '/feed.xml' },
-    copyright: 'Aotearoa Festivals',
-    updated: new Date(),
+    title: config.name,
+    description: `Open directory of ${config.thingPlural} in ${config.city} — ${config.region}.`,
+    id: `${baseUrl}/`,
+    link: `${baseUrl}/`,
+    feedLinks: { rss: `${baseUrl}/feed.xml` },
+    copyright: config.name,
+    updated: new Date(dataset.exportedAt),
     language: 'en-NZ',
   });
-
-  for (const f of festivals) {
+  for (const item of dataset.items) {
     feed.addItem({
-      title: f.name,
-      id: baseUrl + '/festivals/' + f.slug,
-      link: baseUrl + '/festivals/' + f.slug,
-      description: [f.genre, f.dateText, f.notes].filter(Boolean).join(' · '),
-      date: f.startDate ?? f.updatedAt,
+      title: item.name,
+      id: `${baseUrl}/items/${item.id}`,
+      link: `${baseUrl}/items/${item.id}`,
+      description:
+        [item.description, item.city, item.categories.join(', ')].filter(Boolean).join(' · ') ||
+        item.name,
+      date: new Date(`${item.lastVerified}T00:00:00Z`),
     });
   }
-
   return new Response(feed.rss2(), {
     headers: {
-      'Content-Type': 'application/rss+xml; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+      'content-type': 'application/rss+xml; charset=utf-8',
+      'cache-control': 'public, max-age=3600, stale-while-revalidate=86400',
     },
   });
 }

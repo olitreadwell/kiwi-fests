@@ -1,7 +1,7 @@
 // Season itinerary builder: picks a non-overlapping run of festivals that
 // best matches a strategy (most festivals, biggest lineups, or indie picks).
 
-import type { Region } from '@/generated/prisma';
+import type { Region } from '@/lib/festival-types';
 
 export type PlanStrategy = 'most' | 'biggest' | 'indie';
 
@@ -57,6 +57,7 @@ function regionMatches(region: Region | null, filter: PlannerOptions['region']):
   return set.includes(region);
 }
 
+/** Filter festivals for the planner by region, genre, camping and duration. */
 export function filterFestivalsForPlanner<T extends PlanFestival>(
   festivals: T[],
   options: PlannerOptions
@@ -77,6 +78,7 @@ export function filterFestivalsForPlanner<T extends PlanFestival>(
   );
 }
 
+/** Days a festival spans, inclusive of its end date. */
 export function festivalDurationDays(festival: PlanFestival): number {
   if (!festival.startDate) return 0;
   if (!festival.endDate) return 1;
@@ -101,6 +103,7 @@ function festivalLastDay(festival: PlanFestival): number {
   return festival.endDate ? festival.endDate.getTime() : festival.startDate!.getTime();
 }
 
+/** Pick a non-overlapping run of festivals matching the strategy. */
 export function buildFestivalItinerary<T extends PlanFestival>(
   festivals: T[],
   options: PlannerOptions

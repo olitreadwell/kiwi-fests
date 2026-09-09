@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import seedData from '../../prisma/data/festivals-seed.json';
+import seedData from '@/data/seed/festivals-seed.json';
 import { slugify } from '@/lib/format';
 
 const KNOWN_STATUSES = ['active', 'tbc', 'hiatus', 'defunct', 'unconfirmed'];
 
-describe('prisma/data/festivals-seed.json', () => {
+describe('src/data/seed/festivals-seed.json', () => {
   it('has at least one festival entry', () => {
     expect(seedData.festivals.length).toBeGreaterThan(0);
   });
@@ -17,7 +17,7 @@ describe('prisma/data/festivals-seed.json', () => {
   );
 
   it.each(seedData.festivals.map((f) => [f.name, f] as const))(
-    '%s has a status from the known set used by prisma/seed.ts',
+    '%s has a status from the known set used by the seed',
     (_name, festival) => {
       expect(KNOWN_STATUSES).toContain(festival.status);
     }
@@ -41,7 +41,7 @@ describe('prisma/data/festivals-seed.json', () => {
     expect(duplicates).toEqual([]);
   });
 
-  it("produces no slug collisions between distinct festival names, per prisma/seed.ts's upsert-by-slug key", () => {
+  it("produces no slug collisions between distinct festival names, per the seed's slug key", () => {
     const seen = new Map<string, string[]>();
     for (const f of seedData.festivals) {
       const slug = slugify(f.name);

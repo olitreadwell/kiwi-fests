@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useSyncExternalStore } from 'react';
 import dynamic from 'next/dynamic';
 
 const MapContainer = dynamic(() => import('react-leaflet').then((m) => m.MapContainer), {
@@ -26,11 +26,14 @@ type Fest = {
 };
 
 export default function HomeMap({ festivals }: { festivals: Fest[] }) {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   useEffect(() => {
     import('leaflet/dist/leaflet.css');
-    setMounted(true);
   }, []);
 
   if (!mounted) return <div className="h-64 w-full animate-pulse rounded-xl bg-muted lg:h-full" />;
@@ -47,7 +50,7 @@ export default function HomeMap({ festivals }: { festivals: Fest[] }) {
       dragging={true}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OSM</a>'
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {festivals.map((f) => (

@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { prisma } from '@/lib/prisma';
-import { FestivalStatus, Region } from '@/generated/prisma';
-import type { Festival, Promoter } from '@/generated/prisma';
+import { listFestivals, listMapFestivals } from '@/lib/festival-data';
+import { FestivalStatus, Region } from '@/lib/festival-types';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -21,12 +20,10 @@ export const metadata: Metadata = {
     'Discover New Zealand music festivals, promoters, and artists. Browse by region, genre, or status.',
 };
 
-type FestivalWithPromoter = Festival & { promoter: Promoter | null };
-
 function Stat({ label, value }: { label: string; value: number }) {
   return (
     <div className="rounded-2xl border border-border bg-card/70 px-4 py-3">
-      <dt className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+      <dt className="text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-700 dark:text-neutral-300">
         {label}
       </dt>
       <dd className="tabular mt-1 text-2xl font-semibold tracking-tight">{value}</dd>
@@ -55,52 +52,19 @@ export default async function Home({
       : undefined;
 
   const baseWhere = {
-    approved: true,
     ...(validRegion ? { region: validRegion } : {}),
     ...(validStatus ? { status: validStatus } : {}),
-    ...(genre ? { genre: { contains: genre, mode: 'insensitive' as const } } : {}),
-    ...(camping === 'yes' ? { camping: true } : camping === 'no' ? { camping: false } : {}),
-    ...(search ? { name: { contains: search, mode: 'insensitive' as const } } : {}),
+    ...(genre ? { genre } : {}),
+    ...(camping ? { camping } : {}),
+    ...(search ? { search } : {}),
   };
 
-  const [festivalCount, activeCount, upcoming, mapFestivals] = await Promise.all([
-    prisma.festival.count({ where: { approved: true } }),
-    prisma.festival.count({
-      where: { approved: true, status: FestivalStatus.ACTIVE },
-    }),
-    prisma.festival.findMany({
-      where: baseWhere,
-      orderBy: [{ startDate: { sort: 'asc', nulls: 'last' } }, { name: 'asc' }],
-      include: { promoter: true },
-      take: 24,
-    }) as Promise<FestivalWithPromoter[]>,
-    prisma.festival.findMany({
-      where: {
-        approved: true,
-        latitude: { not: null },
-        longitude: { not: null },
-      },
-      select: {
-        id: true,
-        name: true,
-        slug: true,
-        latitude: true,
-        longitude: true,
-        genre: true,
-        region: true,
-        status: true,
-      },
-      orderBy: { name: 'asc' },
-    }),
-  ]);
-
-  const regionCount = await prisma.festival
-    .findMany({
-      where: { approved: true, region: { not: null } },
-      select: { region: true },
-      distinct: ['region'],
-    })
-    .then((r) => r.length);
+  const all = listFestivals();
+  const festivalCount = all.length;
+  const activeCount = all.filter((f) => f.status === FestivalStatus.ACTIVE).length;
+  const upcoming = listFestivals(baseWhere).slice(0, 24);
+  const mapFestivals = listMapFestivals();
+  const regionCount = new Set(all.map((f) => f.region).filter(Boolean)).size;
 
   const now = new Date();
   const upcomingCount = upcoming.filter(

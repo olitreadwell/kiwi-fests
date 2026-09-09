@@ -1,51 +1,21 @@
-# Dependencies
-node_modules/
-
-# Foreign lockfiles (this project uses npm)
-pnpm-lock.yaml
-bun.lock
-yarn.lock
-
-# Build
-dist/
-.next/
-.turbo/
-storybook-static/
-*.tsbuildinfo
-
-# Coverage
-coverage/
-
-# Environment
+node_modules
+.next
+out
+dist
+coverage
+playwright-report
+test-results
+.turbo
+.vercel
+*.log
+.DS_Store
 .env
 .env.local
 .env.*.local
-
-# OS
-.DS_Store
-Thumbs.db
-
-# IDE (keep .vscode committed for shared settings)
-.idea/
-
-# Playwright
-test-results/
-playwright-report/
-blob-report/
-playwright/.cache/
-playwright/.auth/
-
-# Screenshots (PNGs auto-generated, only review.yaml tracked)
-apps/web/screenshots/*.png
-
-# Rollup
-.rollup.cache/
-
-# Superpowers (AI planning docs)
-docs/superpowers/
-.omo/
-.playwright-mcp/
-mobile-home.png
-
-# Prisma engine binaries (platform-specific, generated)
-src/generated/prisma/*.node
+/data
+*.tsbuildinfo
+logs/**
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.venv

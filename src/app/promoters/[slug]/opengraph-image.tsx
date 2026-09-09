@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og';
-import { prisma } from '@/lib/prisma';
+import { getPromoterBySlug } from '@/lib/festival-data';
 
 export const size = {
   width: 1200,
@@ -12,15 +12,10 @@ export const alt = 'Promoter card';
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
-  const promoter = await prisma.promoter.findUnique({
-    where: { slug },
-    select: { name: true, region: true, genreFocus: true },
-  });
+  const promoter = getPromoterBySlug(slug);
 
   const name = promoter?.name ?? 'Aotearoa Festivals';
-  const subtitle = promoter
-    ? [promoter.region, promoter.genreFocus].filter(Boolean).join(' · ')
-    : '';
+  const subtitle = promoter ? [promoter.region, promoter.genre].filter(Boolean).join(' · ') : '';
 
   return new ImageResponse(
     <div
