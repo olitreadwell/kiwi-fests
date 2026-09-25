@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v6
         if: hashFiles('pnpm-lock.yaml') != ''
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version-file: ".nvmrc"
       - name: Install dependencies and audit
