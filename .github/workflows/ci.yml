@@ -44,7 +44,7 @@ jobs:
     needs: preflight
     if: needs.preflight.outputs.skip == 'false'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
         if: hashFiles('pnpm-lock.yaml') != ''
       - uses: actions/setup-node@v7
@@ -72,7 +72,7 @@ jobs:
     needs: preflight
     if: needs.preflight.outputs.skip == 'false'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
         if: hashFiles('pnpm-lock.yaml') != ''
       - uses: actions/setup-node@v7
@@ -99,7 +99,7 @@ jobs:
       matrix:
         shard: [1, 2]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
         if: hashFiles('pnpm-lock.yaml') != ''
       - uses: actions/setup-node@v7
@@ -130,7 +130,7 @@ jobs:
     needs: preflight
     if: needs.preflight.outputs.skip == 'false'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install actionlint
         run: |
           curl -sSL https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash | bash
@@ -144,7 +144,7 @@ jobs:
     needs: preflight
     if: needs.preflight.outputs.skip == 'false'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
       - run: python -m pip install --quiet yamllint
       - run: yamllint -c .yamllint.yml .github/ .yamllint.yml
@@ -156,7 +156,7 @@ jobs:
     needs: preflight
     if: needs.preflight.outputs.skip == 'false'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
       - run: python -m pip install --quiet codespell
       - run: codespell
