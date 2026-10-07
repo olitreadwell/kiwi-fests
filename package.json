@@ -87,7 +87,7 @@
     "prettier": "3.9.9",
     "tailwindcss": "4.3.3",
     "tsx": "4.23.15",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vitest": "4.1.11",
     "vitest-axe": "0.1.0"
   }
