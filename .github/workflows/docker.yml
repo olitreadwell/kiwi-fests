@@ -2,6 +2,17 @@ name: Docker
 
 on:
   push:
+    # Bot branches build the image from their pull_request run instead.
+    branches:
+      - main
+      - master
+      - dev
+      - development
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
   pull_request:
 
 permissions:
@@ -17,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Set up BuildKit (GitHub Actions cache backend)
         uses: docker/setup-buildx-action@v4
       - name: Build image

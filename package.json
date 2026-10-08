@@ -30,6 +30,7 @@
     "test:setup": "node --test scripts/setup.test.mjs",
     "check": "npm run build:snapshot && npm run format:check && npm run lint && npm run typecheck && npm run test:coverage && npm run test:setup && npm run build && npm run smoke && npm run test:e2e && npm run check:links && npm run check:external-links",
     "prepare": "husky",
+    "check:ci": "bash scripts/local-ci.sh",
     "build:snapshot": "node scripts/build-snapshot.mjs",
     "scrape": "node --env-file-if-exists=.env.local --import tsx scripts/run-scrapers.ts",
     "scrape:apply": "node --env-file-if-exists=.env.local --import tsx scripts/run-scrapers.ts --apply",
