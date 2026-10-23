@@ -70,7 +70,7 @@ function toFestival(item: (typeof seedItems)[number]): Festival {
     name: item.name,
     slug: item.id,
     status: (STATUS_TO_KEY[f?.status ?? 'active'] ?? 'ACTIVE') as FestivalStatus,
-    region: (item.region === 'New Zealand' ? null : (REGION_TO_KEY[item.region] ?? null)) ?? null,
+    region: item.region === 'New Zealand' ? null : (REGION_TO_KEY[item.region] ?? null),
     location: item.location ?? null,
     genre: f?.genre ?? null,
     costText: f?.cost ?? null,

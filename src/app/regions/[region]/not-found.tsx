@@ -11,8 +11,7 @@ export default function RegionNotFound() {
       </Link>
       <h1 className="text-3xl font-semibold tracking-tight">Region not found</h1>
       <p className="mt-3 text-sm text-muted-foreground dark:text-muted-foreground">
-        We couldn&apos;t find a region matching that URL. Check the address or browse all regions
-        below.
+        We could not find a region matching that URL. Check the address or browse all regions below.
       </p>
       <Link
         href="/regions"
