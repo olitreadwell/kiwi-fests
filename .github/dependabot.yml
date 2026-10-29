@@ -11,34 +11,25 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'cron'
+      interval: 'monthly'
       cronjob: '0 4 */14 * *'
       timezone: 'Pacific/Auckland'
     versioning-strategy: increase-if-necessary
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 3
     labels: ['dependencies']
     groups:
-      production-patch:
-        dependency-type: 'production'
-        update-types: ['patch']
-      production-minor:
-        dependency-type: 'production'
-        update-types: ['minor']
-      development-patch:
-        dependency-type: 'development'
-        update-types: ['patch']
-      development-minor:
-        dependency-type: 'development'
-        update-types: ['minor']
-
+      all-dependencies:
+        patterns:
+          - '*'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'cron'
+      interval: 'monthly'
       cronjob: '0 4 */14 * *'
       timezone: 'Pacific/Auckland'
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 3
     labels: ['dependencies']
     groups:
-      github-actions:
-        patterns: ['*']
+      all-dependencies:
+        patterns:
+          - '*'
