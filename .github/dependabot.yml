@@ -11,7 +11,7 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'monthly'
+      interval: 'cron'
       cronjob: '0 4 */14 * *'
       timezone: 'Pacific/Auckland'
     versioning-strategy: increase-if-necessary
@@ -34,7 +34,7 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'monthly'
+      interval: 'cron'
       cronjob: '0 4 */14 * *'
       timezone: 'Pacific/Auckland'
     open-pull-requests-limit: 3
