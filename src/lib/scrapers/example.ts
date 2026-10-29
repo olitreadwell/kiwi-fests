@@ -11,6 +11,9 @@ import type { Scraper, ScrapedListing } from '@/lib/scrapers/types';
  */
 export const exampleListingsScraper: Scraper = {
   source: 'example-listings',
+  /**
+   *
+   */
   run: async () => {
     const file = join(process.cwd(), 'scripts', 'examples', 'listing-entries.json');
     const entries = JSON.parse(readFileSync(file, 'utf8')) as Array<Record<string, string>>;
