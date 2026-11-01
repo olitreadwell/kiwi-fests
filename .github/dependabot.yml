@@ -37,6 +37,9 @@ updates:
       - dependency-name: 'eslint-plugin-react-hooks'
         update-types:
           - 'version-update:semver-major'
+      - dependency-name: '@storybook/*'
+        update-types:
+          - 'version-update:semver-major'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
